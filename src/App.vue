@@ -1,9 +1,5 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <router-view></router-view>
 </template>
 
 <style lang="scss">
@@ -25,6 +21,12 @@
     &.router-link-exact-active {
       color: #42b983;
     }
+  }
+}
+.a-class {
+  background-color: #ffff00;
+  h1 {
+    font-style: italic;
   }
 }
 </style>
