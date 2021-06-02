@@ -7,6 +7,8 @@
             <img src="../assets/BWClogo_W.png" alt="" />
           </a>
         </div>
+        <div class="navigation-left-side"></div>
+        <div class="navigation-right-side"></div>
       </div>
     </div>
     <Carousel v-bind:hero-images="['hello', 'world']" />
@@ -18,7 +20,7 @@ import Carousel from "@/components/Carousel.vue";
 export default {
   name: "Header",
   components: {
-    Carousel
+    Carousel,
   },
 };
 </script>

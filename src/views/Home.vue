@@ -1,7 +1,7 @@
 <template>
   <Header />
   <div class="content">
-    <h1>Welcome to bwindowcovers.com.au</h1>
+    
   </div>
   <Footer />
 </template>
