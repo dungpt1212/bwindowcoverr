@@ -64,7 +64,7 @@ export default {
       {
         src:
           "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide3.jpg",
-        interval: 5000,
+        interval: 1500,
         alt: "World Class Design",
         label: "WORLD CLASS DESIGN",
         caption:
@@ -73,7 +73,7 @@ export default {
       {
         src:
           "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide4.jpg",
-        interval: 5000,
+        interval: 1500,
         alt: "10 Year Experience",
         label: "10 YEAR EXPERIENCE",
         caption:
@@ -82,7 +82,7 @@ export default {
       {
         src:
           "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide5.jpg",
-        interval: 5000,
+        interval: 1500,
         alt: "Stunning Window Covers",
         label: "STUNNING WINDOW COVERS",
         caption:

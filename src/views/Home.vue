@@ -46,19 +46,19 @@ export default {
       items: [
         {
           src: "http://bwindowcovers.com.au/wp-content/uploads/2014/10/p3.jpg",
-          interval: 5000,
+          interval: 1500,
         },
         {
           src: "http://bwindowcovers.com.au/wp-content/uploads/2014/10/p2.jpg",
-          interval: 5000,
+          interval: 1500,
         },
         {
           src: "http://bwindowcovers.com.au/wp-content/uploads/2014/10/p16.jpg",
-          interval: 5000,
+          interval: 1500,
         },
         {
           src: "http://bwindowcovers.com.au/wp-content/uploads/2014/10/p9.jpg",
-          interval: 5000,
+          interval: 1500,
         },
       ]
     }
@@ -67,11 +67,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .row {
+    --mdb-gutter-x: inherit;
+  }
   .about {
     padding: 50px 0 40px 0;
     background: #f2f5f8;
     .col-example {
-      padding: 10px 50px 10px 20px;
+      padding: 10px 50px 10px 40px;
       text-align: left;
       h3 {
         margin-bottom: 15px;
