@@ -3,11 +3,14 @@
     <!-- Navbar -->
     <MDBNavbar expand="lg" light bg="white" container position="sticky">
       <MDBNavbarToggler target="#navbarExample01"></MDBNavbarToggler>
-      <MDBNavbarNav collapse="navbarExample01" class="mb-2 mb-lg-0">
-        <MDBNavbarItem to="#" active> Home </MDBNavbarItem>
-        <MDBNavbarItem to="#"> Products </MDBNavbarItem>
-        <MDBNavbarItem to="#"> Gallery </MDBNavbarItem>
-        <MDBNavbarItem to="#"> Contact </MDBNavbarItem>
+      <MDBNavbarNav collapse="navbarExample01" class="mb-2 mb-lg-0" center>
+        <MDBNavbarItem to="#" class="pt-3 w-100px menu_active"> Home </MDBNavbarItem>
+        <MDBNavbarItem to="#" class="pt-3 pr-5 w-100px"> Products </MDBNavbarItem>
+        <MDBNavbarItem to="#" class="w-300px">
+          <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/BWClogo.png">
+        </MDBNavbarItem>
+        <MDBNavbarItem to="#" class="pt-3 w-100px"> Gallery </MDBNavbarItem>
+        <MDBNavbarItem to="#" class="pt-3 w-100px"> Contact </MDBNavbarItem>
       </MDBNavbarNav>
     </MDBNavbar>
     <!-- Navbar -->
@@ -96,6 +99,36 @@ export default {
       carousel,
     };
   },
+  created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  data() {
+    return {
+      scrollPosition: 0,
+    }
+  },
+  methods: {
+    handleScroll () {
+      this.scrollPosition = window.scrollY;
+      var element = document.querySelector('nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top');
+      if (this.scrollPosition >= 120 && this.scrollPosition < 595) {
+        element.classList.remove('down');
+        element.classList.remove('down2');
+        element.classList.add('up');   
+      } else if (this.scrollPosition >= 595) {
+        element.classList.remove('up');
+        element.classList.remove('down');
+        element.classList.add('down2'); 
+      } else {
+        element.classList.remove('up');
+        element.classList.remove('down2');
+        element.classList.add('down'); 
+      }
+    },
+    mounted() {
+      this.handleScroll();
+    },
+  },
 };
 </script>
 
@@ -113,5 +146,42 @@ export default {
     .carousel-indicators {
       bottom: 35%;
     }
+  }
+  nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top {
+    background: rgba(0,0,0,0.4) !important;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    a.router-link-active.router-link-exact-active.nav-link {
+      color: #eeeded;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 100;
+    }
+    .w-300px {
+      width: 300px;
+    }
+    .w-100px {
+      width: 100px;
+    }
+    .menu_active a {
+      color: #d80808 !important;
+    }
+    a:hover {
+      color: #d80808 !important;
+    }
+  }
+  nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top.up {
+    top: -200px;
+    transition: 1s;
+  }
+  nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top.down {
+    top: 0px;
+    transition: 1s;
+  }
+  nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top.down2 {
+    top: 0px;
+    transition: 2s;
+    background: #bfbfbf !important;
   }
 </style>
