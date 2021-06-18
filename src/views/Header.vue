@@ -35,7 +35,7 @@
     <!-- Background image -->
 
     <!-- Carousel -->
-    <MDBCarousel v-model="carousel" :items="items" fade dark />
+    <MDBCarousel v-model="carousel" :items="items" :indicators="false" class="slide-banner" />
   </header>
 </template>
 
@@ -100,16 +100,18 @@ export default {
 </script>
 
 <style lang="scss">
-.carousel-inner {
-  max-height: 600px;
-  img {
-    max-height: 600px;
+  .slide-banner {
+    .carousel-inner {
+      height: 100vh;
+      img {
+        height: 100vh;
+      }
+      .carousel-caption {
+        bottom: 40%;
+      }
+    }
+    .carousel-indicators {
+      bottom: 35%;
+    }
   }
-  .carousel-caption {
-    bottom: 40%;
-  }
-}
-.carousel-indicators {
-  bottom: 35%;
-}
 </style>
