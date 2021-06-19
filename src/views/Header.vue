@@ -3,11 +3,14 @@
     <!-- Navbar -->
     <MDBNavbar expand="lg" light bg="white" container position="sticky">
       <MDBNavbarToggler target="#navbarExample01"></MDBNavbarToggler>
-      <MDBNavbarNav collapse="navbarExample01" class="mb-2 mb-lg-0">
-        <MDBNavbarItem to="#" active> Home </MDBNavbarItem>
-        <MDBNavbarItem to="#"> Products </MDBNavbarItem>
-        <MDBNavbarItem to="#"> Gallery </MDBNavbarItem>
-        <MDBNavbarItem to="#"> Contact </MDBNavbarItem>
+      <MDBNavbarNav collapse="navbarExample01" class="mb-2 mb-lg-0" center>
+        <MDBNavbarItem to="#" class="pt-3 w-100px menu_active"> Home </MDBNavbarItem>
+        <MDBNavbarItem to="#" class="pt-3 pr-5 w-100px"> Products </MDBNavbarItem>
+        <MDBNavbarItem to="#" class="w-300px">
+          <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/BWClogo.png">
+        </MDBNavbarItem>
+        <MDBNavbarItem to="#" class="pt-3 w-100px"> Gallery </MDBNavbarItem>
+        <MDBNavbarItem to="#" class="pt-3 w-100px"> Contact </MDBNavbarItem>
       </MDBNavbarNav>
     </MDBNavbar>
     <!-- Navbar -->
@@ -35,7 +38,7 @@
     <!-- Background image -->
 
     <!-- Carousel -->
-    <MDBCarousel v-model="carousel" :items="items" fade dark />
+    <MDBCarousel v-model="carousel" :items="items" :indicators="false" class="slide-banner" />
   </header>
 </template>
 
@@ -64,7 +67,7 @@ export default {
       {
         src:
           "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide3.jpg",
-        interval: 5000,
+        interval: 1500,
         alt: "World Class Design",
         label: "WORLD CLASS DESIGN",
         caption:
@@ -73,7 +76,7 @@ export default {
       {
         src:
           "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide4.jpg",
-        interval: 5000,
+        interval: 1500,
         alt: "10 Year Experience",
         label: "10 YEAR EXPERIENCE",
         caption:
@@ -82,7 +85,7 @@ export default {
       {
         src:
           "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide5.jpg",
-        interval: 5000,
+        interval: 1500,
         alt: "Stunning Window Covers",
         label: "STUNNING WINDOW COVERS",
         caption:
@@ -96,20 +99,89 @@ export default {
       carousel,
     };
   },
+  created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  data() {
+    return {
+      scrollPosition: 0,
+    }
+  },
+  methods: {
+    handleScroll () {
+      this.scrollPosition = window.scrollY;
+      var element = document.querySelector('nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top');
+      if (this.scrollPosition >= 120 && this.scrollPosition < 595) {
+        element.classList.remove('down');
+        element.classList.remove('down2');
+        element.classList.add('up');   
+      } else if (this.scrollPosition >= 595) {
+        element.classList.remove('up');
+        element.classList.remove('down');
+        element.classList.add('down2'); 
+      } else {
+        element.classList.remove('up');
+        element.classList.remove('down2');
+        element.classList.add('down'); 
+      }
+    },
+    mounted() {
+      this.handleScroll();
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-.carousel-inner {
-  max-height: 600px;
-  img {
-    max-height: 600px;
+  .slide-banner {
+    .carousel-inner {
+      height: 100vh;
+      img {
+        height: 100vh;
+      }
+      .carousel-caption {
+        bottom: 40%;
+      }
+    }
+    .carousel-indicators {
+      bottom: 35%;
+    }
   }
-  .carousel-caption {
-    bottom: 40%;
+  nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top {
+    background: rgba(0,0,0,0.4) !important;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    a.router-link-active.router-link-exact-active.nav-link {
+      color: #ffffff;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 100;
+    }
+    .w-300px {
+      width: 300px;
+    }
+    .w-100px {
+      width: 100px;
+    }
+    .menu_active a {
+      color: #d80808 !important;
+    }
+    a:hover {
+      color: #d80808 !important;
+    }
   }
-}
-.carousel-indicators {
-  bottom: 35%;
-}
+  nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top.up {
+    top: -200px;
+    transition: 1s;
+  }
+  nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top.down {
+    top: 0px;
+    transition: 1s;
+  }
+  nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top.down2 {
+    top: 0px;
+    transition: 2s;
+    background: #bfbfbf !important;
+  }
 </style>
