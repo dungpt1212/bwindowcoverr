@@ -153,7 +153,7 @@ export default {
     width: 100%;
     height: 100px;
     a.router-link-active.router-link-exact-active.nav-link {
-      color: #eeeded;
+      color: #ffffff;
       text-transform: uppercase;
       font-size: 13px;
       font-weight: 100;
