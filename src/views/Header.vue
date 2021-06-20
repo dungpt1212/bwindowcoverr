@@ -133,11 +133,19 @@ export default {
         } else if (this.scrollPosition >= 595) {
           element.classList.remove('up');
           element.classList.remove('down');
-          element.classList.add('down2'); 
+          if (this.$route.name == 'Gallery') {
+            element.classList.add('down2'); 
+          } else {
+            element.classList.add('down'); 
+          }
         } else {
           element.classList.remove('up');
           element.classList.remove('down2');
-          element.classList.add('down'); 
+          if (this.$route.name == 'Gallery') {
+            element.classList.add('down2'); 
+          } else {
+            element.classList.add('down'); 
+          }
         }
       }
     },
@@ -173,6 +181,7 @@ export default {
   },
   mounted() {
     this.handleScroll();
+    this.handleResponsive();  
   },
 };
 </script>
@@ -201,7 +210,7 @@ export default {
     }
   }
   nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top {
-    background: #bfbfbf !important;
+    background: rgba(0,0,0,0.4) !important;
     position: fixed;
     width: 100%;
     height: 100px;
