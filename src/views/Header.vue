@@ -5,7 +5,14 @@
       <MDBNavbarToggler target="#navbarExample01"></MDBNavbarToggler>
       <MDBNavbarNav collapse="navbarExample01" class="mb-2 mb-lg-0" center>
         <MDBNavbarItem to="#" class="pt-3 w-100px menu_active"> Home </MDBNavbarItem>
-        <MDBNavbarItem to="#" class="pt-3 pr-5 w-100px"> Products </MDBNavbarItem>
+        <MDBNavbarItem to="#" class="pt-3 pr-5 w-100px product" @mouseover="showSubMenu" @mouseleave="hideSubMenu"> 
+          Products 
+          <ul v-if="showSubMenuFlag" class="sub-menu clearfix">
+            <li><a href="/indoor">INDOOR</a></li>
+            <li><a href="/indoor">OUTDOOR</a></li>
+            <li><a href="/indoor">SECURITY</a></li>
+          </ul>
+        </MDBNavbarItem>
         <MDBNavbarItem to="#" class="w-300px">
           <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/BWClogo.png">
         </MDBNavbarItem>
@@ -105,6 +112,7 @@ export default {
   data() {
     return {
       scrollPosition: 0,
+      showSubMenuFlag: false,
     }
   },
   methods: {
@@ -125,9 +133,15 @@ export default {
         element.classList.add('down'); 
       }
     },
-    mounted() {
-      this.handleScroll();
+    showSubMenu () {
+      this.showSubMenuFlag = true;
     },
+    hideSubMenu () {
+      this.showSubMenuFlag = false;
+    }
+  },
+  mounted() {
+    this.handleScroll();
   },
 };
 </script>
@@ -170,6 +184,30 @@ export default {
     a:hover {
       color: #d80808 !important;
     }
+    li.product {
+      position: relative;
+    }
+    ul.sub-menu {
+      width: 200px;
+      background: rgba(0,0,0,0.62);
+      position: absolute;
+      top: 70px;
+      left: -15px;
+      display: block;
+      list-style: unset;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      li {
+        text-align: left;
+        line-height: 35px;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+  .product:hover .sub-menu {
+    display: block;
   }
   nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top.up {
     top: -200px;
