@@ -79,7 +79,7 @@ export default {
         p {
             position: absolute;
             top: 40%;
-            right: 40%;
+            right: 43%;
             color: #ffffff;
             font-size: 50px;
             font-weight: 100;

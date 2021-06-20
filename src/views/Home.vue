@@ -23,8 +23,10 @@
       <MDBCol sm="12" md="6">
         <div class="col-example">
           <div class="special-heading align-center" style="text-align: center;">
-            <h4 class="special-h-tag">TESTIMONIALS</h4>
-            <!-- <hr class="separator margin-bottom" align="center" style="background-color:red;border-color:red;color:red;height:2px;width:170px;"> -->
+            <p class="special-h-tag">TESTIMONIALS</p>
+            <hr class="separator margin-bottom " style="margin: 0px auto; background-color:#e8e8e8;border-color:#e8e8e8;color:#e8e8e8;height:2px;width:170px;">
+            <!-- <MDBCarousel v-model="carousel" :items="itemsReplys" :indicators="false"/> -->
+            <img src="../assets/image/reply1.jpg" style="width: 100%;" />
           </div>
         </div>
       </MDBCol>
@@ -115,6 +117,28 @@ export default {
           src: "http://bwindowcovers.com.au/wp-content/uploads/2014/10/IMG_0021.jpg",
           interval: 1500,
         },
+      ],
+      itemsReplys: [
+        {
+          src: "https://drive.google.com/file/d/1z3w_lQ2t3kiGXBtm8NZidrebfuG13e3x/view?usp=sharing",
+          interval: 150000,
+        },
+        {
+          src: "https://drive.google.com/file/d/1pA1auUXckFbQLBZI7x5Mz62CX7EDPgeH/view?usp=sharing",
+          interval: 150000,
+        },
+        {
+          src: "https://drive.google.com/file/d/1pA1auUXckFbQLBZI7x5Mz62CX7EDPgeH/view?usp=sharing",
+          interval: 150000,
+        },
+        {
+          src: "https://drive.google.com/file/d/1RYK2YigWlPR9U4KdV2dZ9wAVo9k7P4Yu/view?usp=sharing",
+          interval: 150000,
+        },
+        {
+          src: "https://drive.google.com/file/d/1yMqEWikodz1sSy5P1iO8eZs3kIyhyw0n/view?usp=sharing",
+          interval: 150000,
+        },
       ]
     }
   },
@@ -162,6 +186,11 @@ export default {
       }
       .indoor {
         color: #d80808;
+      }
+      .special-h-tag {
+        font-size: 30px;
+        font-weight: 100;
+        margin-top: 20px;
       }
     }
   }

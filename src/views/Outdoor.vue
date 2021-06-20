@@ -1,7 +1,7 @@
 <template>
     <Header />
     <div class="indoor-background">
-        <p>INDOOR</p>
+        <p>OUTDOOR</p>
     </div>
     <div style="width: 70%; margin: 0px auto;">
         <MDBRow>
@@ -68,7 +68,7 @@ export default {
         p {
             position: absolute;
             top: 40%;
-            right: 40%;
+            right: 42%;
             color: #ffffff;
             font-size: 50px;
             font-weight: 100;
