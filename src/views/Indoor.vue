@@ -72,7 +72,7 @@ export default {
 
 <style lang="scss" scoped>
     .indoor-background {
-        background: url(http://bwindowcovers.com.au/wp-content/uploads/2016/07/bg.jpg) center bottom no-repeat fixed;
+        background: url(http://bwindowcovers.com.au/wp-content/uploads/2016/07/bg.jpg) center bottom fixed;
         height: 300px;
         margin-bottom: 20px;
         position: relative;
