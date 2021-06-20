@@ -4,20 +4,32 @@
     <!-- PC -->
     <MDBNavbar v-if="screenSize >= 992" expand="lg" light bg="white" container position="sticky">
       <MDBNavbarNav collapse="navbarExample01" class="mb-2 mb-lg-0" center>
-        <MDBNavbarItem to="#" class="pt-3 w-100px menu_active"> Home </MDBNavbarItem>
+        <MDBNavbarItem to="#" class="pt-3 w-100px menu_active">
+          <router-link to="/"> HOME </router-link>
+        </MDBNavbarItem>
         <MDBNavbarItem to="#" class="pt-3 pr-5 w-100px product" @mouseover="showSubMenu" @mouseleave="hideSubMenu"> 
-          Products 
+          PRODUCTS 
           <ul v-if="showSubMenuFlag" class="sub-menu clearfix">
-            <li><a href="/indoor">INDOOR</a></li>
-            <li><a href="/indoor">OUTDOOR</a></li>
-            <li><a href="/indoor">SECURITY</a></li>
+            <li><a href="/indoor">
+              <router-link to="/indoor"> INDOOR </router-link>
+            </a></li>
+            <li><a href="/indoor">
+              <router-link to="/outdoor"> OUTDOOR </router-link>
+            </a></li>
+            <li><a href="/indoor">
+              <router-link to="/outdoor"> SECURITY </router-link>
+            </a></li>
           </ul>
         </MDBNavbarItem>
         <MDBNavbarItem to="#" class="w-300px">
-          <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/BWClogo.png">
+          <router-link to="/"> <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/BWClogo.png"> </router-link>
         </MDBNavbarItem>
-        <MDBNavbarItem to="#" class="pt-3 w-100px"> Gallery </MDBNavbarItem>
-        <MDBNavbarItem to="#" class="pt-3 w-100px"> Contact </MDBNavbarItem>
+        <MDBNavbarItem to="#" class="pt-3 w-100px"> 
+          <router-link to="/gallery"> GALLERY </router-link>
+        </MDBNavbarItem>
+        <MDBNavbarItem to="#" class="pt-3 w-100px"> 
+          <router-link to="/contact"> CONTACT </router-link>
+        </MDBNavbarItem>
       </MDBNavbarNav>
     </MDBNavbar>
 
@@ -189,7 +201,7 @@ export default {
     }
   }
   nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top {
-    background: rgba(0,0,0,0.4) !important;
+    background: #bfbfbf !important;
     position: fixed;
     width: 100%;
     height: 100px;
@@ -198,6 +210,9 @@ export default {
       text-transform: uppercase;
       font-size: 14px;
       font-weight: 100;
+      a {
+        color: #ffffff;
+      }
     }
     .w-300px {
       width: 300px;
