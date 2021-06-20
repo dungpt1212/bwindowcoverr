@@ -128,7 +128,7 @@ export default {
     }
   }
   nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top {
-    background: rgba(0,0,0,0.4) !important;
+    background: #bfbfbf !important;
     position: fixed;
     width: 100%;
     height: 100px;
