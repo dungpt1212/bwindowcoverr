@@ -1,8 +1,8 @@
 <template>
   <header>
     <!-- Navbar -->
-    <MDBNavbar expand="lg" light bg="white" container position="sticky">
-      <MDBNavbarToggler target="#navbarExample01"></MDBNavbarToggler>
+    <!-- PC -->
+    <MDBNavbar v-if="screenSize >= 992" expand="lg" light bg="white" container position="sticky">
       <MDBNavbarNav collapse="navbarExample01" class="mb-2 mb-lg-0" center>
         <MDBNavbarItem to="#" class="pt-3 w-100px menu_active"> Home </MDBNavbarItem>
         <MDBNavbarItem to="#" class="pt-3 pr-5 w-100px product" @mouseover="showSubMenu" @mouseleave="hideSubMenu"> 
@@ -19,6 +19,32 @@
         <MDBNavbarItem to="#" class="pt-3 w-100px"> Gallery </MDBNavbarItem>
         <MDBNavbarItem to="#" class="pt-3 w-100px"> Contact </MDBNavbarItem>
       </MDBNavbarNav>
+    </MDBNavbar>
+
+    <!-- Mobile, Ipad -->
+    <MDBNavbar v-if="screenSize < 992" expand="lg" light bg="white" container position="sticky">
+      <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/BWClogo.png" style="margin-left:10%">
+      <button 
+        class="navbar-toggler btn-navbar-toggler" 
+        type="button"
+        @click="handleShowMobileMenu"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <MDBListGroup>
+        <MDBListGroupItem tag="a" href="#" action>Home</MDBListGroupItem>
+        <MDBListGroupItem tag="a" href="#" action>
+          <span>Products</span>
+          <span class="fas fa-arrow-right mobile-submenu-btn" @click="handleShowMobileSubMenu" style="font-size: 10px;float:right;margin-top:-8px;padding:15px;margin-right:-15px;"></span>
+          <ul style="list-style:none" class="mobile-submenu">
+            <li>indoor</li>
+            <li>outdoor</li>
+            <li>security</li>
+          </ul>
+        </MDBListGroupItem>
+        <MDBListGroupItem tag="a" href="#" action>Gallery</MDBListGroupItem>
+        <MDBListGroupItem tag="a" href="#" action>Contract</MDBListGroupItem>
+      </MDBListGroup>
     </MDBNavbar>
     <!-- Navbar -->
 
@@ -51,44 +77,56 @@
 import {
   //   MDBBtn,
   MDBNavbar,
-  MDBNavbarToggler,
+  //MDBNavbarToggler,
   MDBNavbarNav,
   MDBNavbarItem,
+  MDBListGroup, 
+  MDBListGroupItem
 } from "mdb-vue-ui-kit";
+import $ from 'jquery'
+
 export default {
   name: "Header",
   components: {
     // MDBBtn,
     MDBNavbar,
-    MDBNavbarToggler,
+    //MDBNavbarToggler,
     MDBNavbarNav,
     MDBNavbarItem,
+    MDBListGroup,
+    MDBListGroupItem
   },
   created () {
     window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("resize", this.handleResponsive);
   },
   data() {
     return {
       scrollPosition: 0,
       showSubMenuFlag: false,
+      screenSize: 0,
+      showMobileMenu: false,
+      showMobileSubMenu: false,
     }
   },
   methods: {
     handleScroll () {
       this.scrollPosition = window.scrollY;
       var element = document.querySelector('nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top');
-      if (this.scrollPosition >= 120 && this.scrollPosition < 595) {
-        element.classList.remove('down');
-        element.classList.remove('down2');
-        element.classList.add('up');   
-      } else if (this.scrollPosition >= 595) {
-        element.classList.remove('up');
-        element.classList.remove('down');
-        element.classList.add('down2'); 
-      } else {
-        element.classList.remove('up');
-        element.classList.remove('down2');
-        element.classList.add('down'); 
+      if (this.screenSize > 992) {
+        if (this.scrollPosition >= 120 && this.scrollPosition < 595) {
+          element.classList.remove('down');
+          element.classList.remove('down2');
+          element.classList.add('up');   
+        } else if (this.scrollPosition >= 595) {
+          element.classList.remove('up');
+          element.classList.remove('down');
+          element.classList.add('down2'); 
+        } else {
+          element.classList.remove('up');
+          element.classList.remove('down2');
+          element.classList.add('down'); 
+        }
       }
     },
     showSubMenu () {
@@ -96,6 +134,29 @@ export default {
     },
     hideSubMenu () {
       this.showSubMenuFlag = false;
+    },
+    handleResponsive () {
+      this.screenSize = window.innerWidth;
+    },
+    handleShowMobileMenu () {
+      this.showMobileMenu = !this.showMobileMenu;
+      if (this.showMobileMenu) {
+        $('ul.list-group').slideDown();
+      } else {
+        $('ul.list-group').slideUp();
+      }
+    },
+    handleShowMobileSubMenu () {
+      this.showMobileSubMenu = !this.showMobileSubMenu;
+      if (this.showMobileSubMenu) {
+        $('ul.mobile-submenu').slideDown();
+        $('.mobile-submenu-btn').removeClass('fa-arrow-right');
+        $('.mobile-submenu-btn').addClass('fa-arrow-down');
+      } else {
+        $('ul.mobile-submenu').slideUp();
+        $('.mobile-submenu-btn').removeClass('fa-arrow-down');
+        $('.mobile-submenu-btn').addClass('fa-arrow-right');
+      }
     }
   },
   mounted() {
@@ -169,6 +230,32 @@ export default {
         a {
           color: white;
         }
+      }
+    }
+    .btn-navbar-toggler {
+      position: fixed;
+      right: 10%;
+      top: 20px;
+      color: white;
+    }
+    ul.list-group {
+      position: absolute;
+      top: 100px;
+      left: 0px;
+      width: 100%;
+      text-align: left;
+      display: none;
+      a {
+        font-weight: 100;
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+      ul.mobile-submenu {
+        display: none;
+        margin-top: 10px;
+      }
+      a:hover {
+        color: black !important;
       }
     }
   }
