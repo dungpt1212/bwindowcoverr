@@ -44,20 +44,16 @@
     </div> -->
     <!-- Background image -->
 
-    <!-- Carousel -->
-    <MDBCarousel v-model="carousel" :items="items" :indicators="false" class="slide-banner" />
   </header>
 </template>
 
 <script>
-import { ref } from "vue";
 import {
   //   MDBBtn,
   MDBNavbar,
   MDBNavbarToggler,
   MDBNavbarNav,
   MDBNavbarItem,
-  MDBCarousel,
 } from "mdb-vue-ui-kit";
 export default {
   name: "Header",
@@ -67,44 +63,6 @@ export default {
     MDBNavbarToggler,
     MDBNavbarNav,
     MDBNavbarItem,
-    MDBCarousel,
-  },
-  setup() {
-    const items = [
-      {
-        src:
-          "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide3.jpg",
-        interval: 1500,
-        alt: "World Class Design",
-        label: "WORLD CLASS DESIGN",
-        caption:
-          "A job is not complete to us until every single details is taken care of, thats we are rated the best globally",
-      },
-      {
-        src:
-          "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide4.jpg",
-        interval: 1500,
-        alt: "10 Year Experience",
-        label: "10 YEAR EXPERIENCE",
-        caption:
-          "Simplicity is at the heart of our design, we make complex things look and feel simple",
-      },
-      {
-        src:
-          "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide5.jpg",
-        interval: 1500,
-        alt: "Stunning Window Covers",
-        label: "STUNNING WINDOW COVERS",
-        caption:
-          "Simplicity is at the heart of our design, we make complex things look and feel simple",
-      },
-    ];
-    const carousel = ref(0);
-
-    return {
-      items,
-      carousel,
-    };
   },
   created () {
     window.addEventListener('scroll', this.handleScroll);
@@ -149,12 +107,20 @@ export default {
 <style lang="scss">
   .slide-banner {
     .carousel-inner {
-      height: 100vh;
+      // height: 100vh;
       img {
-        height: 100vh;
+        // height: 100vh;
       }
       .carousel-caption {
-        bottom: 40%;
+        bottom: 50%;
+        h5 {
+          font-size: 40px;
+          // color: #4e4d4d;
+        }
+        p {
+          // color: #4e4d4d;
+          font-size: 17px;
+        }
       }
     }
     .carousel-indicators {
@@ -169,7 +135,7 @@ export default {
     a.router-link-active.router-link-exact-active.nav-link {
       color: #ffffff;
       text-transform: uppercase;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 100;
     }
     .w-300px {
