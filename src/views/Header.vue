@@ -145,11 +145,7 @@ export default {
         } else if (this.scrollPosition >= 595) {
           element.classList.remove('up');
           element.classList.remove('down');
-          if (this.$route.name == 'Gallery') {
-            element.classList.add('down2'); 
-          } else {
-            element.classList.add('down'); 
-          }
+          element.classList.add('down2'); 
         } else {
           element.classList.remove('up');
           element.classList.remove('down2');
