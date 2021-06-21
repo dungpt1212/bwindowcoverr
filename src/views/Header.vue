@@ -13,11 +13,11 @@
             <li><a href="/indoor">
               <router-link to="/indoor"> INDOOR </router-link>
             </a></li>
-            <li><a href="/indoor">
+            <li><a href="/outdoor">
               <router-link to="/outdoor"> OUTDOOR </router-link>
             </a></li>
-            <li><a href="/indoor">
-              <router-link to="/outdoor"> SECURITY </router-link>
+            <li><a href="/security">
+              <router-link to="/security"> SECURITY </router-link>
             </a></li>
           </ul>
         </MDBNavbarItem>
@@ -44,18 +44,30 @@
         <i class="fas fa-bars"></i>
       </button>
       <MDBListGroup>
-        <MDBListGroupItem tag="a" href="#" action>Home</MDBListGroupItem>
+        <MDBListGroupItem tag="a" href="#" action>
+          <router-link to="/"> Home </router-link>
+        </MDBListGroupItem>
         <MDBListGroupItem tag="a" href="#" action>
           <span>Products</span>
           <span class="fas fa-arrow-right mobile-submenu-btn" @click="handleShowMobileSubMenu" style="font-size: 10px;float:right;margin-top:-8px;padding:15px;margin-right:-15px;"></span>
           <ul style="list-style:none" class="mobile-submenu">
-            <li>indoor</li>
-            <li>outdoor</li>
-            <li>security</li>
+            <li>
+              <router-link to="/indoor"> indoor </router-link>
+            </li>
+            <li>
+              <router-link to="/outdoor"> outdoor </router-link>
+            </li>
+            <li>
+              <router-link to="/security"> security </router-link>
+            </li>
           </ul>
         </MDBListGroupItem>
-        <MDBListGroupItem tag="a" href="#" action>Gallery</MDBListGroupItem>
-        <MDBListGroupItem tag="a" href="#" action>Contract</MDBListGroupItem>
+        <MDBListGroupItem tag="a" href="#" action>
+          <router-link to="/gallery"> Gallery </router-link>
+        </MDBListGroupItem>
+        <MDBListGroupItem tag="a" href="#" action>
+          <router-link to="/contact"> Contract </router-link>
+        </MDBListGroupItem>
       </MDBListGroup>
     </MDBNavbar>
     <!-- Navbar -->
