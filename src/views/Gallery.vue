@@ -9,7 +9,9 @@
                 <MDBRow>
                     <MDBCol sm="6" md="3" lg="3" xl="3" v-for="(image, key) in imageRollers" :key="key" style="margin-bottom: 20px;">
                         <div class="col-example">
-                            <img :src="image.url" class="image-gallery-roller" />
+                            <div class="bg-image hover-zoom">
+                                <img :src="image.url" class="image-gallery-roller img-fluid" />
+                            </div>
                         </div>
                     </MDBCol>
                 </MDBRow>
@@ -21,7 +23,9 @@
                 <MDBRow>
                     <MDBCol sm="6" md="3" lg="3" xl="3" v-for="(image, key) in imageVerticals" :key="key" style="margin-bottom: 20px;">
                         <div class="col-example">
-                            <img :src="image.url" class="image-gallery-roller" />
+                            <div class="bg-image hover-zoom">
+                                <img :src="image.url" class="image-gallery-roller img-fluid" />
+                            </div>
                         </div>
                     </MDBCol>
                 </MDBRow>
@@ -33,7 +37,9 @@
                 <MDBRow>
                     <MDBCol sm="6" md="3" lg="3" xl="3" v-for="(image, key) in imageRomans" :key="key" style="margin-bottom: 20px;">
                         <div class="col-example">
-                            <img :src="image.url" class="image-gallery-roller" />
+                            <div class="bg-image hover-zoom">
+                                <img :src="image.url" class="image-gallery-roller img-fluid" />
+                            </div>
                         </div>
                     </MDBCol>
                 </MDBRow>
@@ -45,7 +51,9 @@
                 <MDBRow>
                     <MDBCol sm="6" md="3" lg="3" xl="3" v-for="(image, key) in imageVenetians" :key="key" style="margin-bottom: 20px;">
                         <div class="col-example">
-                            <img :src="image.url" class="image-gallery-roller" />
+                            <div class="bg-image hover-zoom">
+                                <img :src="image.url" class="image-gallery-roller img-fluid" />
+                            </div>
                         </div>
                     </MDBCol>
                 </MDBRow>
@@ -57,7 +65,9 @@
                 <MDBRow>
                     <MDBCol sm="6" md="3" lg="3" xl="3" v-for="(image, key) in imageCurtains" :key="key" style="margin-bottom: 20px;">
                         <div class="col-example">
-                            <img :src="image.url" class="image-gallery-roller" />
+                            <div class="bg-image hover-zoom">
+                                <img :src="image.url" class="image-gallery-roller img-fluid" />
+                            </div>
                         </div>
                     </MDBCol>
                 </MDBRow>
@@ -69,7 +79,9 @@
                 <MDBRow>
                     <MDBCol sm="6" md="3" lg="3" xl="3" v-for="(image, key) in imagePlantinos" :key="key" style="margin-bottom: 20px;">
                         <div class="col-example">
-                            <img :src="image.url" class="image-gallery-roller" />
+                            <div class="bg-image hover-zoom">
+                                <img :src="image.url" class="image-gallery-roller img-fluid" />
+                            </div>
                         </div>
                     </MDBCol>
                 </MDBRow>
@@ -83,7 +95,9 @@
                 <MDBRow>
                     <MDBCol sm="6" md="3" lg="3" xl="3" v-for="(image, key) in imageAwnings" :key="key" style="margin-bottom: 20px;">
                         <div class="col-example">
-                            <img :src="image.url" class="image-gallery-roller" />
+                            <div class="bg-image hover-zoom">
+                                <img :src="image.url" class="image-gallery-roller img-fluid" />
+                            </div>
                         </div>
                     </MDBCol>
                 </MDBRow>
@@ -95,7 +109,9 @@
                 <MDBRow>
                     <MDBCol sm="6" md="3" lg="3" xl="3" v-for="(image, key) in imageZipSreens" :key="key" style="margin-bottom: 20px;">
                         <div class="col-example">
-                            <img :src="image.url" class="image-gallery-roller" />
+                            <div class="bg-image hover-zoom">
+                                <img :src="image.url" class="image-gallery-roller img-fluid" />
+                            </div>
                         </div>
                     </MDBCol>
                 </MDBRow>
@@ -107,7 +123,9 @@
                 <MDBRow>
                     <MDBCol sm="6" md="3" lg="3" xl="3" v-for="(image, key) in imageFoldAwnings" :key="key" style="margin-bottom: 20px;">
                         <div class="col-example">
-                            <img :src="image.url" class="image-gallery-roller" />
+                            <div class="bg-image hover-zoom">
+                                <img :src="image.url" class="image-gallery-roller img-fluid" />
+                            </div>
                         </div>
                     </MDBCol>
                 </MDBRow>
@@ -120,7 +138,9 @@
                 <MDBRow>
                     <MDBCol sm="6" md="3" lg="3" xl="3" v-for="(image, key) in imageSecuritys" :key="key" style="margin-bottom: 20px;">
                         <div class="col-example">
-                            <img :src="image.url" class="image-gallery-roller" />
+                            <div class="bg-image hover-zoom">
+                                <img :src="image.url" class="image-gallery-roller img-fluid" />
+                            </div>
                         </div>
                     </MDBCol>
                 </MDBRow>
@@ -215,6 +235,7 @@ export default {
             font-weight: 200;
         }
         .image-gallery-roller {
+            cursor: pointer;
             width: 100%;
         }
         .col-example {
