@@ -1,17 +1,74 @@
 <template>
   <header>
     <!-- Navbar -->
-    <MDBNavbar expand="lg" light bg="white" container position="sticky">
-      <MDBNavbarToggler target="#navbarExample01"></MDBNavbarToggler>
+    <!-- PC -->
+    <MDBNavbar v-if="screenSize >= 992" expand="lg" light bg="white" container position="sticky">
       <MDBNavbarNav collapse="navbarExample01" class="mb-2 mb-lg-0" center>
-        <MDBNavbarItem to="#" class="pt-3 w-100px menu_active"> Home </MDBNavbarItem>
-        <MDBNavbarItem to="#" class="pt-3 pr-5 w-100px"> Products </MDBNavbarItem>
-        <MDBNavbarItem to="#" class="w-300px">
-          <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/BWClogo.png">
+        <MDBNavbarItem to="#" class="pt-3 w-100px menu_active">
+          <router-link to="/"> HOME </router-link>
         </MDBNavbarItem>
-        <MDBNavbarItem to="#" class="pt-3 w-100px"> Gallery </MDBNavbarItem>
-        <MDBNavbarItem to="#" class="pt-3 w-100px"> Contact </MDBNavbarItem>
+        <MDBNavbarItem to="#" class="pt-3 pr-5 w-100px product" @mouseover="showSubMenu" @mouseleave="hideSubMenu"> 
+          PRODUCTS 
+          <ul v-if="showSubMenuFlag" class="sub-menu clearfix">
+            <li><a href="/indoor">
+              <router-link to="/indoor"> INDOOR </router-link>
+            </a></li>
+            <li><a href="/outdoor">
+              <router-link to="/outdoor"> OUTDOOR </router-link>
+            </a></li>
+            <li><a href="/security">
+              <router-link to="/security"> SECURITY </router-link>
+            </a></li>
+          </ul>
+        </MDBNavbarItem>
+        <MDBNavbarItem to="#" class="w-300px">
+          <router-link to="/"> <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/BWClogo.png"> </router-link>
+        </MDBNavbarItem>
+        <MDBNavbarItem to="#" class="pt-3 w-100px"> 
+          <router-link to="/gallery"> GALLERY </router-link>
+        </MDBNavbarItem>
+        <MDBNavbarItem to="#" class="pt-3 w-100px"> 
+          <router-link to="/contact"> CONTACT </router-link>
+        </MDBNavbarItem>
       </MDBNavbarNav>
+    </MDBNavbar>
+
+    <!-- Mobile, Ipad -->
+    <MDBNavbar v-if="screenSize < 992" expand="lg" light bg="white" container position="sticky">
+      <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/BWClogo.png" style="margin-left:10%">
+      <button 
+        class="navbar-toggler btn-navbar-toggler" 
+        type="button"
+        @click="handleShowMobileMenu"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <MDBListGroup>
+        <MDBListGroupItem tag="a" href="#" action>
+          <router-link to="/"> Home </router-link>
+        </MDBListGroupItem>
+        <MDBListGroupItem tag="a" href="#" action>
+          <span>Products</span>
+          <span class="fas fa-arrow-right mobile-submenu-btn" @click="handleShowMobileSubMenu" style="font-size: 10px;float:right;margin-top:-8px;padding:15px;margin-right:-15px;"></span>
+          <ul style="list-style:none" class="mobile-submenu">
+            <li>
+              <router-link to="/indoor"> indoor </router-link>
+            </li>
+            <li>
+              <router-link to="/outdoor"> outdoor </router-link>
+            </li>
+            <li>
+              <router-link to="/security"> security </router-link>
+            </li>
+          </ul>
+        </MDBListGroupItem>
+        <MDBListGroupItem tag="a" href="#" action>
+          <router-link to="/gallery"> Gallery </router-link>
+        </MDBListGroupItem>
+        <MDBListGroupItem tag="a" href="#" action>
+          <router-link to="/contact"> Contract </router-link>
+        </MDBListGroupItem>
+      </MDBListGroup>
     </MDBNavbar>
     <!-- Navbar -->
 
@@ -37,97 +94,106 @@
     </div> -->
     <!-- Background image -->
 
-    <!-- Carousel -->
-    <MDBCarousel v-model="carousel" :items="items" :indicators="false" class="slide-banner" />
   </header>
 </template>
 
 <script>
-import { ref } from "vue";
 import {
   //   MDBBtn,
   MDBNavbar,
-  MDBNavbarToggler,
+  //MDBNavbarToggler,
   MDBNavbarNav,
   MDBNavbarItem,
-  MDBCarousel,
+  MDBListGroup, 
+  MDBListGroupItem
 } from "mdb-vue-ui-kit";
+import $ from 'jquery'
+
 export default {
   name: "Header",
   components: {
     // MDBBtn,
     MDBNavbar,
-    MDBNavbarToggler,
+    //MDBNavbarToggler,
     MDBNavbarNav,
     MDBNavbarItem,
-    MDBCarousel,
-  },
-  setup() {
-    const items = [
-      {
-        src:
-          "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide3.jpg",
-        interval: 1500,
-        alt: "World Class Design",
-        label: "WORLD CLASS DESIGN",
-        caption:
-          "A job is not complete to us until every single details is taken care of, thats we are rated the best globally",
-      },
-      {
-        src:
-          "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide4.jpg",
-        interval: 1500,
-        alt: "10 Year Experience",
-        label: "10 YEAR EXPERIENCE",
-        caption:
-          "Simplicity is at the heart of our design, we make complex things look and feel simple",
-      },
-      {
-        src:
-          "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide5.jpg",
-        interval: 1500,
-        alt: "Stunning Window Covers",
-        label: "STUNNING WINDOW COVERS",
-        caption:
-          "Simplicity is at the heart of our design, we make complex things look and feel simple",
-      },
-    ];
-    const carousel = ref(0);
-
-    return {
-      items,
-      carousel,
-    };
+    MDBListGroup,
+    MDBListGroupItem
   },
   created () {
     window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("resize", this.handleResponsive);
   },
   data() {
     return {
       scrollPosition: 0,
+      showSubMenuFlag: false,
+      screenSize: 0,
+      showMobileMenu: false,
+      showMobileSubMenu: false,
     }
   },
   methods: {
     handleScroll () {
       this.scrollPosition = window.scrollY;
       var element = document.querySelector('nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top');
-      if (this.scrollPosition >= 120 && this.scrollPosition < 595) {
-        element.classList.remove('down');
-        element.classList.remove('down2');
-        element.classList.add('up');   
-      } else if (this.scrollPosition >= 595) {
-        element.classList.remove('up');
-        element.classList.remove('down');
-        element.classList.add('down2'); 
-      } else {
-        element.classList.remove('up');
-        element.classList.remove('down2');
-        element.classList.add('down'); 
+      if (this.screenSize > 992) {
+        if (this.scrollPosition >= 120 && this.scrollPosition < 595) {
+          element.classList.remove('down');
+          element.classList.remove('down2');
+          element.classList.add('up');   
+        } else if (this.scrollPosition >= 595) {
+          element.classList.remove('up');
+          element.classList.remove('down');
+          if (this.$route.name == 'Gallery') {
+            element.classList.add('down2'); 
+          } else {
+            element.classList.add('down'); 
+          }
+        } else {
+          element.classList.remove('up');
+          element.classList.remove('down2');
+          if (this.$route.name == 'Gallery') {
+            element.classList.add('down2'); 
+          } else {
+            element.classList.add('down'); 
+          }
+        }
       }
     },
-    mounted() {
-      this.handleScroll();
+    showSubMenu () {
+      this.showSubMenuFlag = true;
     },
+    hideSubMenu () {
+      this.showSubMenuFlag = false;
+    },
+    handleResponsive () {
+      this.screenSize = window.innerWidth;
+    },
+    handleShowMobileMenu () {
+      this.showMobileMenu = !this.showMobileMenu;
+      if (this.showMobileMenu) {
+        $('ul.list-group').slideDown();
+      } else {
+        $('ul.list-group').slideUp();
+      }
+    },
+    handleShowMobileSubMenu () {
+      this.showMobileSubMenu = !this.showMobileSubMenu;
+      if (this.showMobileSubMenu) {
+        $('ul.mobile-submenu').slideDown();
+        $('.mobile-submenu-btn').removeClass('fa-arrow-right');
+        $('.mobile-submenu-btn').addClass('fa-arrow-down');
+      } else {
+        $('ul.mobile-submenu').slideUp();
+        $('.mobile-submenu-btn').removeClass('fa-arrow-down');
+        $('.mobile-submenu-btn').addClass('fa-arrow-right');
+      }
+    }
+  },
+  mounted() {
+    this.handleScroll();
+    this.handleResponsive();  
   },
 };
 </script>
@@ -135,12 +201,20 @@ export default {
 <style lang="scss">
   .slide-banner {
     .carousel-inner {
-      height: 100vh;
+      // height: 100vh;
       img {
-        height: 100vh;
+        // height: 100vh;
       }
       .carousel-caption {
-        bottom: 40%;
+        bottom: 50%;
+        h5 {
+          font-size: 40px;
+          // color: #4e4d4d;
+        }
+        p {
+          // color: #4e4d4d;
+          font-size: 17px;
+        }
       }
     }
     .carousel-indicators {
@@ -155,8 +229,11 @@ export default {
     a.router-link-active.router-link-exact-active.nav-link {
       color: #ffffff;
       text-transform: uppercase;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 100;
+      a {
+        color: #ffffff;
+      }
     }
     .w-300px {
       width: 300px;
@@ -170,6 +247,56 @@ export default {
     a:hover {
       color: #d80808 !important;
     }
+    li.product {
+      position: relative;
+    }
+    ul.sub-menu {
+      width: 200px;
+      background: rgba(0,0,0,0.62);
+      position: absolute;
+      top: 70px;
+      left: -15px;
+      display: block;
+      list-style: unset;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      li {
+        text-align: left;
+        line-height: 35px;
+        a {
+          color: white;
+        }
+      }
+    }
+    .btn-navbar-toggler {
+      position: fixed;
+      right: 10%;
+      top: 20px;
+      color: white;
+    }
+    ul.list-group {
+      position: absolute;
+      top: 100px;
+      left: 0px;
+      width: 100%;
+      text-align: left;
+      display: none;
+      a {
+        font-weight: 100;
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+      ul.mobile-submenu {
+        display: none;
+        margin-top: 10px;
+      }
+      a:hover {
+        color: black !important;
+      }
+    }
+  }
+  .product:hover .sub-menu {
+    display: block;
   }
   nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top.up {
     top: -200px;
