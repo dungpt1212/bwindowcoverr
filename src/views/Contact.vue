@@ -9,8 +9,8 @@
                 <h5 style="font-weight:100">We love to listen and we are eagerly waiting to talk to you regarding your project. Post any queries you have and we will get back to you as soon as possible.</h5>
             </MDBCol>
         </MDBRow>
-        <MDBRow class="mt-5 mb-5">
-            <MDBCol @mouseover="showContent(1)" @mouseleave="hideContent(1)">
+        <MDBRow>
+            <MDBCol sm="12" md="12" lg="4" xl="4" @mouseover="showContent(1)" @mouseleave="hideContent(1)" style="padding-left: 0px;">
                 <a href="#">
                     <div class="animate-icon-module">
                         <i class="fas fa-map-marker-alt icon icon1"></i>
@@ -21,7 +21,7 @@
                     </div>
                 </a>
             </MDBCol>
-             <MDBCol @mouseover="showContent(2)" @mouseleave="hideContent(2)" style="padding-left: 0px;">
+             <MDBCol sm="12" md="12" lg="4" xl="4" @mouseover="showContent(2)" @mouseleave="hideContent(2)" style="padding-left: 0px;">
                 <a href="#">
                     <div class="animate-icon-module">
                         <i class="fas fa-envelope icon icon2"></i>
@@ -31,7 +31,7 @@
                     </div>
                 </a>
             </MDBCol>
-             <MDBCol @mouseover="showContent(3)" @mouseleave="hideContent(3)" style="padding-left: 0px;">
+             <MDBCol sm="12" md="12" lg="4" xl="4" @mouseover="showContent(3)" @mouseleave="hideContent(3)" style="padding-left: 0px;">
                 <a href="#">
                     <div class="animate-icon-module">
                         <i class="fas fa-phone-alt icon icon3"></i>
@@ -43,19 +43,21 @@
             </MDBCol>
         </MDBRow>
          <MDBRow class="mt-5 mb-5">
-            <MDBCol>
-                <h6 class="text-start font-100">POST YOUR QUERY</h6>
+            <MDBCol sm="12" md="12" lg="6" xl="6">
+                <h6 class="text-start font-150">POST YOUR QUERY</h6>
                 <form class="mt-5">
                     <MDBInput label="Name" size="lg" />
                     <MDBInput label="Email" class="mt-4" size="lg" />
                     <MDBInput label="Subject" class="mt-4" size="lg" />
                     <MDBTextarea label="Message" rows="4" class="mt-4 mb-5" />
-                    <MDBBtn color="dark" class="mt-4" size="lg">SUBMIT</MDBBtn>
+                    <div style="text-align: left; margin-bottom: 20px;">
+                        <MDBBtn color="dark" class="mt-4" size="lg">SUBMIT</MDBBtn>
+                    </div>
                 </form>
             </MDBCol>
-            <MDBCol>
+            <MDBCol sm="12" md="12" lg="6" xl="6">
                 <h6 class="text-start font-100 mb-5">OUR OFFICE</h6>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d953718.7081295741!2d105.09215784260898!3d20.974041527113535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135008e13800a29%3A0x2987e416210b90d!2zSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1624300856938!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d953718.7081295741!2d105.09215784260898!3d20.974041527113535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135008e13800a29%3A0x2987e416210b90d!2zSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1624300856938!5m2!1svi!2s" height="450" style="border:0; width: 100%;" allowfullscreen="" loading="lazy"></iframe>
             </MDBCol>
         </MDBRow>
     </div>
@@ -112,6 +114,7 @@ export default {
     .contact-page {
         .animate-icon-module {
             background: #f2f4f8;
+            margin-bottom: 20px;
             height: 200px;
             position: relative;
             overflow: hidden;
@@ -127,7 +130,7 @@ export default {
                 color: #d80808;
                 position: absolute;
                 width: 100%;
-                bottom: -100px;
+                bottom: -150px;
                 left: 0px;
                 transition: 0.5s;
             }
@@ -138,10 +141,10 @@ export default {
                 top: 75px;
             }
             .content.show {
-                bottom: 34%;
+                bottom: 30%;
             }
             .content.hide {
-                bottom: -100px;
+                bottom: -200px;
             }
         }
         .font-100 {
