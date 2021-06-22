@@ -46,10 +46,10 @@
             <MDBCol sm="12" md="12" lg="6" xl="6">
                 <h6 class="text-start font-150">POST YOUR QUERY</h6>
                 <MDBRow tag="form" class="g-3 needs-validation" novalidate @submit.prevent="checkForm">
-                    <MDBInput label="Name" size="lg" invalidFeedback="Please provide Name." required style="margin-bottom: 10px;" />
-                    <MDBInput label="Email" class="mt-4" size="lg" invalidFeedback="Please provide Email." required style="margin-bottom: 10px;" />
-                    <MDBInput label="Subject" class="mt-4" size="lg" invalidFeedback="Please provide Subject." required style="margin-bottom: 10px;" />
-                    <MDBTextarea label="Message" rows="4" class="mt-4 mb-5" invalidFeedback="Please provide Message." required style="margin-bottom: 10px;" />
+                    <MDBInput label="Name" size="lg" invalidFeedback="Please provide Name." required />
+                    <MDBInput label="Email" class="mt-4" size="lg" invalidFeedback="Please provide Email." required />
+                    <MDBInput label="Subject" class="mt-4" size="lg" invalidFeedback="Please provide Subject." required />
+                    <MDBTextarea label="Message" rows="4" class="mt-4 mb-5" invalidFeedback="Please provide Message." required />
                     <div style="text-align: left; margin-bottom: 20px;">
                         <MDBBtn color="dark" class="mt-4" size="lg" type="submit">SUBMIT</MDBBtn>
                     </div>
