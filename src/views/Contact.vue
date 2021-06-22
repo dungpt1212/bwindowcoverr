@@ -94,9 +94,10 @@ export default {
 
 <style lang="scss" scoped>
     .contact-background {
-        background: url(http://bwindowcovers.com.au/wp-content/uploads/2014/11/bg1.jpg) center bottom fixed;
+        background: url(http://bwindowcovers.com.au/wp-content/uploads/2014/11/bg1.jpg) center center no-repeat scroll;
         height: 500px;
-        margin-bottom: 20px;
+        opacity: 1;
+        padding: 0px;
         position: relative;
         p {
             position: absolute;
