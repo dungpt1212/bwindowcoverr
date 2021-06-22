@@ -45,15 +45,15 @@
          <MDBRow class="mt-5 mb-5">
             <MDBCol sm="12" md="12" lg="6" xl="6">
                 <h6 class="text-start font-150">POST YOUR QUERY</h6>
-                <form class="mt-5">
-                    <MDBInput label="Name" size="lg" />
-                    <MDBInput label="Email" class="mt-4" size="lg" />
-                    <MDBInput label="Subject" class="mt-4" size="lg" />
-                    <MDBTextarea label="Message" rows="4" class="mt-4 mb-5" />
+                <MDBRow tag="form" class="g-3 needs-validation" novalidate @submit.prevent="checkForm">
+                    <MDBInput label="Name" size="lg" invalidFeedback="Please provide Name." required style="margin-bottom: 10px;" />
+                    <MDBInput label="Email" class="mt-4" size="lg" invalidFeedback="Please provide Email." required style="margin-bottom: 10px;" />
+                    <MDBInput label="Subject" class="mt-4" size="lg" invalidFeedback="Please provide Subject." required style="margin-bottom: 10px;" />
+                    <MDBTextarea label="Message" rows="4" class="mt-4 mb-5" invalidFeedback="Please provide Message." required style="margin-bottom: 10px;" />
                     <div style="text-align: left; margin-bottom: 20px;">
-                        <MDBBtn color="dark" class="mt-4" size="lg">SUBMIT</MDBBtn>
+                        <MDBBtn color="dark" class="mt-4" size="lg" type="submit">SUBMIT</MDBBtn>
                     </div>
-                </form>
+                </MDBRow>
             </MDBCol>
             <MDBCol sm="12" md="12" lg="6" xl="6">
                 <h6 class="text-start font-100 mb-5">OUR OFFICE</h6>
@@ -77,6 +77,14 @@ export default {
             
         };
     },
+    setup() {
+        const checkForm = e => {
+            e.target.classList.add("was-validated");
+        };
+        return {
+            checkForm
+        };
+    },
     methods: {
         showContent (index) {
             $('.animate-icon-module .icon.icon' + index).removeClass('show');
@@ -93,7 +101,14 @@ export default {
     }
 };
 </script>
-
+<style lang="scss">
+    .form-outline {
+        margin-bottom: 15px;
+    }
+    .invalid-feedback {
+        margin-top: 8px;
+    }
+</style>
 <style lang="scss" scoped>
     .contact-background {
         background: url(http://bwindowcovers.com.au/wp-content/uploads/2014/11/bg1.jpg) center center no-repeat scroll;
