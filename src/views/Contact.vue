@@ -108,6 +108,9 @@ export default {
     .invalid-feedback {
         margin-top: 8px;
     }
+    .was-validated .form-control:invalid, .form-control.is-invalid {
+        margin-bottom: 0;
+    }
 </style>
 <style lang="scss" scoped>
     .contact-background {
