@@ -44,12 +44,12 @@
         <i class="fas fa-bars"></i>
       </button>
       <MDBListGroup>
-        <MDBListGroupItem tag="a" href="#" action>
+        <MDBListGroupItem tag="a" action>
           <router-link to="/"> Home </router-link>
         </MDBListGroupItem>
-        <MDBListGroupItem tag="a" href="#" action>
+        <MDBListGroupItem tag="a" action @click="handleShowMobileSubMenu" style="cursor: pointer;">
           <span>Products</span>
-          <span class="fas fa-arrow-right mobile-submenu-btn" @click="handleShowMobileSubMenu" style="font-size: 10px;float:right;margin-top:-8px;padding:15px;margin-right:-15px;"></span>
+          <span class="fas fa-angle-right mobile-submenu-btn" style="font-size: 12px;float:right;margin-top:-8px;padding:15px;margin-right:-15px;"></span>
           <ul style="list-style:none" class="mobile-submenu">
             <li>
               <router-link to="/indoor"> indoor </router-link>
@@ -62,10 +62,10 @@
             </li>
           </ul>
         </MDBListGroupItem>
-        <MDBListGroupItem tag="a" href="#" action>
+        <MDBListGroupItem tag="a" action>
           <router-link to="/gallery"> Gallery </router-link>
         </MDBListGroupItem>
-        <MDBListGroupItem tag="a" href="#" action>
+        <MDBListGroupItem tag="a" action>
           <router-link to="/contact"> Contract </router-link>
         </MDBListGroupItem>
       </MDBListGroup>
@@ -145,11 +145,7 @@ export default {
         } else if (this.scrollPosition >= 595) {
           element.classList.remove('up');
           element.classList.remove('down');
-          if (this.$route.name == 'Gallery') {
-            element.classList.add('down2'); 
-          } else {
-            element.classList.add('down'); 
-          }
+          element.classList.add('down2'); 
         } else {
           element.classList.remove('up');
           element.classList.remove('down2');
@@ -182,12 +178,12 @@ export default {
       this.showMobileSubMenu = !this.showMobileSubMenu;
       if (this.showMobileSubMenu) {
         $('ul.mobile-submenu').slideDown();
-        $('.mobile-submenu-btn').removeClass('fa-arrow-right');
-        $('.mobile-submenu-btn').addClass('fa-arrow-down');
+        $('.mobile-submenu-btn').removeClass('fa-angle-right');
+        $('.mobile-submenu-btn').addClass('fa-angle-down');
       } else {
         $('ul.mobile-submenu').slideUp();
-        $('.mobile-submenu-btn').removeClass('fa-arrow-down');
-        $('.mobile-submenu-btn').addClass('fa-arrow-right');
+        $('.mobile-submenu-btn').removeClass('fa-angle-down');
+        $('.mobile-submenu-btn').addClass('fa-angle-right');
       }
     }
   },
@@ -203,7 +199,7 @@ export default {
     .carousel-inner {
       // height: 100vh;
       img {
-        // height: 100vh;
+        max-height: 100vh;
       }
       .carousel-caption {
         bottom: 50%;
@@ -219,6 +215,12 @@ export default {
     }
     .carousel-indicators {
       bottom: 35%;
+    }
+  }
+  .list-group-item-action {
+    border-bottom: 1px solid #eaeaea;
+    a {
+      color: #262626;
     }
   }
   nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top {
@@ -288,7 +290,10 @@ export default {
       }
       ul.mobile-submenu {
         display: none;
-        margin-top: 10px;
+        margin-top: 12px;
+        li {
+          margin-bottom: 5px;
+        }
       }
       a:hover {
         color: black !important;
@@ -310,5 +315,8 @@ export default {
     top: 0px;
     transition: 2s;
     background: #bfbfbf !important;
+  }
+  .list-group-item-action:hover, .list-group-item-action:focus {
+    background-color: white;
   }
 </style>
