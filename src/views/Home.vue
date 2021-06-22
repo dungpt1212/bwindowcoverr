@@ -25,8 +25,9 @@
           <div class="special-heading align-center" style="text-align: center;">
             <p class="special-h-tag">TESTIMONIALS</p>
             <hr class="separator margin-bottom " style="margin: 0px auto; background-color:#e8e8e8;border-color:#e8e8e8;color:#e8e8e8;height:2px;width:170px;">
-            <!-- <MDBCarousel v-model="carousel" :items="itemsReplys" :indicators="false"/> -->
-            <img src="../assets/image/reply1.jpg" style="width: 100%;" />
+            <div style="width: 70%; margin: 0px auto;">
+              <MDBCarousel v-model="carousel" :items="itemsReplys" :indicators="true" dark class="slide-reply"/>
+            </div>
           </div>
         </div>
       </MDBCol>
@@ -120,24 +121,24 @@ export default {
       ],
       itemsReplys: [
         {
-          src: "https://drive.google.com/file/d/1z3w_lQ2t3kiGXBtm8NZidrebfuG13e3x/view?usp=sharing",
-          interval: 150000,
+          src: require('../assets/image/reply1.jpg'),
+          interval: 1500,
         },
         {
-          src: "https://drive.google.com/file/d/1pA1auUXckFbQLBZI7x5Mz62CX7EDPgeH/view?usp=sharing",
-          interval: 150000,
+          src: require('../assets/image/reply2.jpg'),
+          interval: 1500,
         },
         {
-          src: "https://drive.google.com/file/d/1pA1auUXckFbQLBZI7x5Mz62CX7EDPgeH/view?usp=sharing",
-          interval: 150000,
+          src: require('../assets/image/reply3.jpg'),
+          interval: 1500,
         },
         {
-          src: "https://drive.google.com/file/d/1RYK2YigWlPR9U4KdV2dZ9wAVo9k7P4Yu/view?usp=sharing",
-          interval: 150000,
+          src: require('../assets/image/reply4.jpg'),
+          interval: 1500,
         },
         {
-          src: "https://drive.google.com/file/d/1yMqEWikodz1sSy5P1iO8eZs3kIyhyw0n/view?usp=sharing",
-          interval: 150000,
+          src: require('../assets/image/reply5.jpg'),
+          interval: 1500,
         },
       ]
     }
@@ -145,6 +146,16 @@ export default {
 };
 </script>
 
+<style lang="scss">
+  .slide-reply {
+    .carousel-control-prev, .carousel-control-next {
+      display: none;
+    }
+    .carousel-indicators {
+      bottom: -50px;
+    }
+  }
+</style>
 <style lang="scss" scoped>
   .row {
     --mdb-gutter-x: inherit;
