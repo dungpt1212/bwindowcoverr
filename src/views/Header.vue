@@ -4,30 +4,41 @@
     <!-- PC -->
     <MDBNavbar v-if="screenSize >= 992" expand="lg" light bg="white" container position="sticky">
       <MDBNavbarNav collapse="navbarExample01" class="mb-2 mb-lg-0" center>
-        <MDBNavbarItem to="#" class="pt-3 w-100px menu_active">
+        <MDBNavbarItem to="#" class="pt-3 w-100px" :class="{ menu_active: $route.name == 'Home' }">
           <router-link to="/"> HOME </router-link>
         </MDBNavbarItem>
-        <MDBNavbarItem to="#" class="pt-3 pr-5 w-100px product" @mouseover="showSubMenu" @mouseleave="hideSubMenu"> 
-          PRODUCTS 
+        <MDBNavbarItem 
+          to="#" 
+          class="pt-3 pr-5 w-100px product" 
+          @mouseover="showSubMenu" 
+          @mouseleave="hideSubMenu"
+        > 
+          <span :class="{ menu_active: $route.name == 'Indoor' || $route.name == 'Outdoor' || $route.name == 'Security' }">product</span> 
           <ul v-if="showSubMenuFlag" class="sub-menu clearfix">
-            <li><a href="/indoor">
-              <router-link to="/indoor"> INDOOR </router-link>
-            </a></li>
-            <li><a href="/outdoor">
-              <router-link to="/outdoor"> OUTDOOR </router-link>
-            </a></li>
-            <li><a href="/security">
-              <router-link to="/security"> SECURITY </router-link>
-            </a></li>
+            <li :class="{ menu_active: $route.name == 'Indoor'}">
+              <a href="/indoor">
+                <router-link to="/indoor"> INDOOR </router-link>
+              </a>
+            </li>
+            <li :class="{ menu_active: $route.name == 'Outdoor'}">
+              <a href="/outdoor">
+                <router-link to="/outdoor"> OUTDOOR </router-link>
+              </a>
+            </li>
+            <li :class="{ menu_active: $route.name == 'Security'}">
+              <a href="/security">
+                <router-link to="/security"> SECURITY </router-link>
+              </a>
+            </li>
           </ul>
         </MDBNavbarItem>
         <MDBNavbarItem to="#" class="w-300px">
           <router-link to="/"> <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/BWClogo.png"> </router-link>
         </MDBNavbarItem>
-        <MDBNavbarItem to="#" class="pt-3 w-100px"> 
+        <MDBNavbarItem to="#" class="pt-3 w-100px" :class="{ menu_active: $route.name == 'Gallery' }"> 
           <router-link to="/gallery"> GALLERY </router-link>
         </MDBNavbarItem>
-        <MDBNavbarItem to="#" class="pt-3 w-100px"> 
+        <MDBNavbarItem to="#" class="pt-3 w-100px" :class="{ menu_active: $route.name == 'Contact' }"> 
           <router-link to="/contact"> CONTACT </router-link>
         </MDBNavbarItem>
       </MDBNavbarNav>
@@ -44,28 +55,33 @@
         <i class="fas fa-bars"></i>
       </button>
       <MDBListGroup>
-        <MDBListGroupItem tag="a" action>
+        <MDBListGroupItem tag="a" :class="{ menu_active: $route.name == 'Home' }" action>
           <router-link to="/"> Home </router-link>
         </MDBListGroupItem>
-        <MDBListGroupItem tag="a" action @click="handleShowMobileSubMenu" style="cursor: pointer;">
-          <span>Products</span>
+        <MDBListGroupItem 
+          tag="a" 
+          action 
+          @click="handleShowMobileSubMenu" 
+          style="cursor: pointer;"
+        >
+          <span :class="{ menu_active: $route.name == 'Indoor' || $route.name == 'Outdoor' || $route.name == 'Security' }">Products</span>
           <span class="fas fa-angle-right mobile-submenu-btn" style="font-size: 12px;float:right;margin-top:-8px;padding:15px;margin-right:-15px;"></span>
           <ul style="list-style:none" class="mobile-submenu">
-            <li>
+            <li :class="{ menu_active: $route.name == 'Indoor' }">
               <router-link to="/indoor"> indoor </router-link>
             </li>
-            <li>
+            <li :class="{ menu_active: $route.name == 'Outdoor' }">
               <router-link to="/outdoor"> outdoor </router-link>
             </li>
-            <li>
+            <li :class="{ menu_active: $route.name == 'Security' }">
               <router-link to="/security"> security </router-link>
             </li>
           </ul>
         </MDBListGroupItem>
-        <MDBListGroupItem tag="a" action>
+        <MDBListGroupItem :class="{ menu_active: $route.name == 'Gallery' }" tag="a" action>
           <router-link to="/gallery"> Gallery </router-link>
         </MDBListGroupItem>
-        <MDBListGroupItem tag="a" action>
+        <MDBListGroupItem :class="{ menu_active: $route.name == 'Contact' }" tag="a" action>
           <router-link to="/contact"> Contract </router-link>
         </MDBListGroupItem>
       </MDBListGroup>
@@ -138,11 +154,11 @@ export default {
       this.scrollPosition = window.scrollY;
       var element = document.querySelector('nav.navbar.navbar-light.bg-white.navbar-expand-lg.sticky-top');
       if (this.screenSize > 992) {
-        if (this.scrollPosition >= 120 && this.scrollPosition < 595) {
+        if (this.scrollPosition >= 120 && this.scrollPosition < 230) {
           element.classList.remove('down');
           element.classList.remove('down2');
           element.classList.add('up');   
-        } else if (this.scrollPosition >= 595) {
+        } else if (this.scrollPosition >= 230) {
           element.classList.remove('up');
           element.classList.remove('down');
           element.classList.add('down2'); 
@@ -231,7 +247,7 @@ export default {
     a.router-link-active.router-link-exact-active.nav-link {
       color: #ffffff;
       text-transform: uppercase;
-      font-size: 14px;
+      font-size: 17px;
       font-weight: 100;
       a {
         color: #ffffff;
@@ -246,11 +262,15 @@ export default {
     .menu_active a {
       color: #d80808 !important;
     }
+    span.menu_active {
+      color: #d80808 !important;
+    }
     a:hover {
       color: #d80808 !important;
     }
     li.product {
       position: relative;
+
     }
     ul.sub-menu {
       width: 200px;

@@ -38,7 +38,14 @@
         <div>
             <p class="action-content" style="color:#ffffff;">
                 <span class="text-react">Reach Out to us now!</span> 
-                <span><a href="/contact" class="btn-contact" target="_blank" style="border-style: solid; border-width: 2px; border-color: rgb(255, 255, 255); background-color: inherit; color: rgb(255, 255, 255);">CONTACT</a></span>
+                <span>
+                    <router-link 
+                        to="/contact"
+                        class="btn-contact" 
+                        style="border-style: solid; border-width: 2px; border-color: rgb(255, 255, 255); background-color: inherit; color: rgb(255, 255, 255);"
+                    > CONTACT 
+                    </router-link>
+                </span>
             </p>
         </div>
     </div>

@@ -11,9 +11,9 @@
           <p style="font-size: 34px; font-weight: 200;">ABOUT US</p>
           <p class="description">B Window Covers is the family owned business in Melbourne with over 10 years experience and knowledge in the window furnishing industry.</p>
           <p class="description">We manufacture, supply and install a variety range of quality and modern window coverings includes</p>
-          <p class="indoor"><a href="#">INDOOR</a></p>
-          <p class="indoor"><a href="#">OUTDOOR</a></p>
-          <p class="indoor"><a href="#">SECURITY</a></p>
+          <p class="indoor"><router-link to="/indoor">INDOOR</router-link></p>
+          <p class="indoor"><router-link to="/outdoor">OUTDOOR</router-link></p>
+          <p class="indoor"><router-link to="/security">SECURITY</router-link></p>
         </div>
       </MDBCol>
     </MDBRow>
@@ -74,7 +74,7 @@ export default {
           interval: 150000,
           alt: "Stunning Window Covers",
           label: "STUNNING WINDOW COVERS",
-          color: "#e81010",
+          color: "#656463",
           caption:
             "Simplicity is at the heart of our design, we make complex things look and feel simple",
         },
