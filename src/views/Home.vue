@@ -36,17 +36,38 @@
       </MDBCol>
     </MDBRow>
   </div>
+  <carousel :items-to-show="1.5">
+    <slide v-for="slide in 10" :key="slide">
+      {{ slide }}
+    </slide>
+
+    <template #addons>
+      <navigation />
+      <pagination />
+    </template>
+  </carousel>
   <Footer />
 </template>
 <script>
 import Header from "@/views/Header.vue";
 import Footer from "@/views/Footer.vue";
 import { MDBCol, MDBRow, MDBCarousel} from 'mdb-vue-ui-kit'
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+
 export default {
   name: "Home",
-  components: { Header, Footer, MDBCol, MDBRow, MDBCarousel },
+  components: { Header, Footer, MDBCol, MDBRow, MDBCarousel, Carousel,
+    Slide,
+    Pagination,
+    Navigation  },
   data() {
     return {
+      data: [
+        '<div class="example-slide">Slide 1</div>',
+        '<div class="example-slide">Slide 2</div>',
+        '<div class="example-slide">Slide 3</div>',
+      ],
       itemsBanners: [
         {
           src:
@@ -147,6 +168,20 @@ export default {
 </script>
 
 <style lang="scss">
+  .example-slide {
+  align-items: center;
+  background-color: #666;
+  color: #999;
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: center;
+  min-height: 10rem;
+}
+.carousel__slide {
+  width: 400px;
+  height: 400px;
+  background-color: red;
+}
   .slide-reply {
     .carousel-control-prev, .carousel-control-next {
       display: none;
