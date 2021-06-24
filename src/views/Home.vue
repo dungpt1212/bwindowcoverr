@@ -24,9 +24,20 @@
         <div class="col-example">
           <div class="special-heading align-center" style="text-align: center;">
             <p class="special-h-tag">TESTIMONIALS</p>
-            <hr class="separator margin-bottom " style="margin: 0px auto; background-color:#e8e8e8;border-color:#e8e8e8;color:#e8e8e8;height:2px;width:170px;">
-            <div style="width: 70%; margin: 0px auto;">
-              <MDBCarousel v-model="carousel" :items="itemsReplys" :indicators="true" dark class="slide-reply"/>
+            <hr class="separator margin-bottom " style="margin: 0px auto; background-color: rgb(169 163 163); border-color:#e8e8e8;color:#e8e8e8;height:2px;width:170px;">
+            <div style="width: 80%; margin: 0px auto;">
+              <carousel :items-to-show="1">
+                <slide v-for="(slide, index) in itemsReplys" :key="index">
+                  <div>
+                    <img src="@/assets/image/reply.png" width="130" height="100" style="margin-top: 20px;" />
+                    <p class="content" style="margin-top: 20px;">{{ slide.content }}</p>
+                    <p class="author" style="margin-top: 20px;">{{ slide.author }}</p>
+                  </div>
+                </slide>
+                <template #addons>
+                  <pagination />
+                </template>
+              </carousel>
             </div>
           </div>
         </div>
@@ -36,16 +47,6 @@
       </MDBCol>
     </MDBRow>
   </div>
-  <carousel :items-to-show="1.5">
-    <slide v-for="slide in 10" :key="slide">
-      {{ slide }}
-    </slide>
-
-    <template #addons>
-      <navigation />
-      <pagination />
-    </template>
-  </carousel>
   <Footer />
 </template>
 <script>
@@ -53,14 +54,13 @@ import Header from "@/views/Header.vue";
 import Footer from "@/views/Footer.vue";
 import { MDBCol, MDBRow, MDBCarousel} from 'mdb-vue-ui-kit'
 import 'vue3-carousel/dist/carousel.css';
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+import { Carousel, Slide, Pagination } from 'vue3-carousel';
 
 export default {
   name: "Home",
   components: { Header, Footer, MDBCol, MDBRow, MDBCarousel, Carousel,
     Slide,
-    Pagination,
-    Navigation  },
+    Pagination,},
   data() {
     return {
       data: [
@@ -142,25 +142,25 @@ export default {
       ],
       itemsReplys: [
         {
-          src: require('../assets/image/reply1.jpg'),
-          interval: 1500,
+          content: 'Good communication and good workmanship. Thanks 27 July 2015',
+          author: 'Tim from West Footscray, VIC'
         },
         {
-          src: require('../assets/image/reply2.jpg'),
-          interval: 1500,
+          content: 'So very happy with the service, quality and most important price. Huan is a very nice person to deal with would definitely recommend to others! 6 August 2014',
+          author: 'Tracey from Point Cook, VIC'
         },
         {
-          src: require('../assets/image/reply3.jpg'),
-          interval: 1500,
+          content: '"Good job. Quality work fair price"',
+          author: 'Hary'
         },
         {
-          src: require('../assets/image/reply4.jpg'),
-          interval: 1500,
+          content: 'We hired Huan because of his profesional advice and prompt service. He could also have the blinds to us faster than any other company thank you Huan 3 March 2014',
+          author: 'Mel and Ang from Blairgowrie, VIC'
         },
         {
-          src: require('../assets/image/reply5.jpg'),
-          interval: 1500,
-        },
+          content: 'Good communication, job was done within a couple of days from contact.',
+          author: 'Vicky'
+        }
       ]
     }
   },
@@ -169,19 +169,32 @@ export default {
 
 <style lang="scss">
   .example-slide {
-  align-items: center;
-  background-color: #666;
-  color: #999;
-  display: flex;
-  font-size: 1.5rem;
-  justify-content: center;
-  min-height: 10rem;
-}
-.carousel__slide {
-  width: 400px;
-  height: 400px;
-  background-color: red;
-}
+    align-items: center;
+    background-color: #666;
+    color: #999;
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+    min-height: 10rem;
+  }
+  .content {
+    font: 100 28px "Open Sans","Open Sans","Arial",sans-serif;
+    color: #8c8c8c;
+    /* line-height: 46px; */
+    letter-spacing: 0px;
+    text-transform: none;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: lighter;
+  }
+  .author {
+    font-size: 18px;
+  }
+  .carousel__slide {
+    // width: 400px;
+    // height: 400px;
+    // background-color: red;
+  }
   .slide-reply {
     .carousel-control-prev, .carousel-control-next {
       display: none;
