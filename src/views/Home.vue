@@ -191,6 +191,7 @@ export default {
     font-size: 18px;
   }
   .carousel__slide {
+    cursor: pointer;
     // width: 400px;
     // height: 400px;
     // background-color: red;
