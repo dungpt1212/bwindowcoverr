@@ -2,7 +2,7 @@
   <div>
     <MDBFooter>
       <div class="footer">
-        Copyright B Window Covers 2016. All Rights Reserved					
+        Copyright B Window Covers {{ new Date().getFullYear() }}. All Rights Reserved					
       </div>
     </MDBFooter>
     <div v-if="positionHide" type="button" class="btn-to-top" @click="scrollToTop()">

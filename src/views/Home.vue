@@ -11,9 +11,9 @@
           <p style="font-size: 34px; font-weight: 200;">ABOUT US</p>
           <p class="description">B Window Covers is the family owned business in Melbourne with over 10 years experience and knowledge in the window furnishing industry.</p>
           <p class="description">We manufacture, supply and install a variety range of quality and modern window coverings includes</p>
-          <p class="indoor"><a href="#">INDOOR</a></p>
-          <p class="indoor"><a href="#">OUTDOOR</a></p>
-          <p class="indoor"><a href="#">SECURITY</a></p>
+          <p class="indoor"><router-link to="/indoor">INDOOR</router-link></p>
+          <p class="indoor"><router-link to="/outdoor">OUTDOOR</router-link></p>
+          <p class="indoor"><router-link to="/security">SECURITY</router-link></p>
         </div>
       </MDBCol>
     </MDBRow>
@@ -24,9 +24,20 @@
         <div class="col-example">
           <div class="special-heading align-center" style="text-align: center;">
             <p class="special-h-tag">TESTIMONIALS</p>
-            <hr class="separator margin-bottom " style="margin: 0px auto; background-color:#e8e8e8;border-color:#e8e8e8;color:#e8e8e8;height:2px;width:170px;">
-            <div style="width: 70%; margin: 0px auto;">
-              <MDBCarousel v-model="carousel" :items="itemsReplys" :indicators="true" dark class="slide-reply"/>
+            <hr class="separator margin-bottom " style="margin: 0px auto; background-color: rgb(169 163 163); border-color:#e8e8e8;color:#e8e8e8;height:2px;width:170px;">
+            <div style="width: 80%; margin: 0px auto;">
+              <carousel :items-to-show="1">
+                <slide v-for="(slide, index) in itemsReplys" :key="index">
+                  <div>
+                    <img src="@/assets/image/reply.png" width="130" height="100" style="margin-top: 20px;" />
+                    <p class="content" style="margin-top: 20px;">{{ slide.content }}</p>
+                    <p class="author" style="margin-top: 20px;">{{ slide.author }}</p>
+                  </div>
+                </slide>
+                <template #addons>
+                  <pagination />
+                </template>
+              </carousel>
             </div>
           </div>
         </div>
@@ -42,11 +53,21 @@
 import Header from "@/views/Header.vue";
 import Footer from "@/views/Footer.vue";
 import { MDBCol, MDBRow, MDBCarousel} from 'mdb-vue-ui-kit'
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Pagination } from 'vue3-carousel';
+
 export default {
   name: "Home",
-  components: { Header, Footer, MDBCol, MDBRow, MDBCarousel },
+  components: { Header, Footer, MDBCol, MDBRow, MDBCarousel, Carousel,
+    Slide,
+    Pagination,},
   data() {
     return {
+      data: [
+        '<div class="example-slide">Slide 1</div>',
+        '<div class="example-slide">Slide 2</div>',
+        '<div class="example-slide">Slide 3</div>',
+      ],
       itemsBanners: [
         {
           src:
@@ -74,7 +95,7 @@ export default {
           interval: 150000,
           alt: "Stunning Window Covers",
           label: "STUNNING WINDOW COVERS",
-          color: "#e81010",
+          color: "#656463",
           caption:
             "Simplicity is at the heart of our design, we make complex things look and feel simple",
         },
@@ -121,25 +142,25 @@ export default {
       ],
       itemsReplys: [
         {
-          src: require('../assets/image/reply1.jpg'),
-          interval: 1500,
+          content: 'Good communication and good workmanship. Thanks 27 July 2015',
+          author: 'Tim from West Footscray, VIC'
         },
         {
-          src: require('../assets/image/reply2.jpg'),
-          interval: 1500,
+          content: 'So very happy with the service, quality and most important price. Huan is a very nice person to deal with would definitely recommend to others! 6 August 2014',
+          author: 'Tracey from Point Cook, VIC'
         },
         {
-          src: require('../assets/image/reply3.jpg'),
-          interval: 1500,
+          content: '"Good job. Quality work fair price"',
+          author: 'Hary'
         },
         {
-          src: require('../assets/image/reply4.jpg'),
-          interval: 1500,
+          content: 'We hired Huan because of his profesional advice and prompt service. He could also have the blinds to us faster than any other company thank you Huan 3 March 2014',
+          author: 'Mel and Ang from Blairgowrie, VIC'
         },
         {
-          src: require('../assets/image/reply5.jpg'),
-          interval: 1500,
-        },
+          content: 'Good communication, job was done within a couple of days from contact.',
+          author: 'Vicky'
+        }
       ]
     }
   },
@@ -147,6 +168,34 @@ export default {
 </script>
 
 <style lang="scss">
+  .example-slide {
+    align-items: center;
+    background-color: #666;
+    color: #999;
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+    min-height: 10rem;
+  }
+  .content {
+    font: 100 28px "Open Sans","Open Sans","Arial",sans-serif;
+    color: #8c8c8c;
+    /* line-height: 46px; */
+    letter-spacing: 0px;
+    text-transform: none;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: lighter;
+  }
+  .author {
+    font-size: 18px;
+  }
+  .carousel__slide {
+    cursor: pointer;
+    // width: 400px;
+    // height: 400px;
+    // background-color: red;
+  }
   .slide-reply {
     .carousel-control-prev, .carousel-control-next {
       display: none;

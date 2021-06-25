@@ -13,7 +13,9 @@
     "jquery": "^3.6.0",
     "mdb-vue-ui-kit": "^1.0.0-beta6",
     "vue": "^3.0.0",
+    "vue-picture-swipe": "^2.1.0",
     "vue-router": "^4.0.0-0",
+    "vue3-carousel": "^0.1.23",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
