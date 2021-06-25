@@ -46,7 +46,8 @@
 
     <!-- Mobile, Ipad -->
     <MDBNavbar v-if="screenSize < 992" expand="lg" light bg="white" container position="sticky">
-      <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/BWClogo.png" style="margin-left:10%">
+      <!-- <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/BWClogo.png" style="margin-left:10%"> -->
+      <router-link to="/"> <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/BWClogo.png" style="margin-left:10%"> </router-link>
       <button 
         class="navbar-toggler btn-navbar-toggler" 
         type="button"
