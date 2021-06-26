@@ -166,29 +166,29 @@ export default {
         return {
             imageRollers: [
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Blockout-Roller-Blind-2.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Blockout-Roller-Blind-2.jpg',
+                    src: require("@/assets/gallery/roller/gallery1.jpg"),
+                    thumbnail: require("@/assets/gallery/roller/gallery1.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Blockout-Roller-Blind.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Blockout-Roller-Blind.jpg',
+                    src: require("@/assets/gallery/roller/gallery2.jpg"),
+                    thumbnail: require("@/assets/gallery/roller/gallery2.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/roller-blind-fancy-finish.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/roller-blind-fancy-finish.jpg',
+                    src: require("@/assets/gallery/roller/gallery3.jpg"),
+                    thumbnail: require("@/assets/gallery/roller/gallery3.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Screen-Roller-Blind.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Screen-Roller-Blind.jpg',
+                    src: require("@/assets/gallery/roller/gallery4.jpg"),
+                    thumbnail: require("@/assets/gallery/roller/gallery4.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
@@ -196,15 +196,15 @@ export default {
             ],
             imageVerticals: [
                 {
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Vertical-Blind-2.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Vertical-Blind-2.jpg',
+                    src: require("@/assets/gallery/vertical/gallery1.jpg"),
+                    thumbnail: require("@/assets/gallery/vertical/gallery1.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Vertical-Blind.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Vertical-Blind.jpg',
+                    src: require("@/assets/gallery/vertical/gallery2.jpg"),
+                    thumbnail: require("@/assets/gallery/vertical/gallery2.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
@@ -212,22 +212,22 @@ export default {
             ],
             imageRomans: [
                 {
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Roman-Blind-2.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Roman-Blind-2.jpg',
+                    src: require("@/assets/gallery/roman/gallery1.jpg"),
+                    thumbnail: require("@/assets/gallery/roman/gallery1.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Roman-Blind-3.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Roman-Blind-3.jpg',
+                    src: require("@/assets/gallery/roman/gallery2.jpg"),
+                    thumbnail: require("@/assets/gallery/roman/gallery2.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 {
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Roman-Blind.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Roman-Blind.jpg',
+                    src: require("@/assets/gallery/roman/gallery3.jpg"),
+                    thumbnail: require("@/assets/gallery/roman/gallery3.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
@@ -235,15 +235,15 @@ export default {
             ],
             imageVenetians: [
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Aluminium-Venetian-Blind.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Aluminium-Venetian-Blind.jpg',
+                    src: require("@/assets/gallery/venetian/gallery1.jpg"),
+                    thumbnail: require("@/assets/gallery/venetian/gallery1.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 {
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Timber-Venetian-Blind.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Timber-Venetian-Blind.jpg',
+                    src: require("@/assets/gallery/venetian/gallery2.jpg"),
+                    thumbnail: require("@/assets/gallery/venetian/gallery2.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
@@ -251,29 +251,29 @@ export default {
             ],
             imageCurtains: [
                 {
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Curtain-3.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Curtain-3.jpg',
+                    src: require("@/assets/gallery/curtains/gallery1.jpg"),
+                    thumbnail: require("@/assets/gallery/curtains/gallery1.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Curtain-2.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Curtain-2.jpg',
+                    src: require("@/assets/gallery/curtains/gallery2.jpg"),
+                    thumbnail: require("@/assets/gallery/curtains/gallery2.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Curtain.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Curtain.jpg',
+                    src: require("@/assets/gallery/curtains/gallery3.jpg"),
+                    thumbnail: require("@/assets/gallery/curtains/gallery3.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Sheer-Curtain.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Sheer-Curtain.jpg',
+                    src: require("@/assets/gallery/curtains/gallery3.jpg"),
+                    thumbnail: require("@/assets/gallery/curtains/gallery3.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
@@ -281,22 +281,22 @@ export default {
             ],
             imagePlantinos: [
                 {
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Plantation-Shutter-2.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Plantation-Shutter-2.jpg',
+                    src: require("@/assets/gallery/palentino/gallery1.jpg"),
+                    thumbnail: require("@/assets/gallery/palentino/gallery1.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Plantation-Shutter-3.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Plantation-Shutter-3.jpg',
+                    src: require("@/assets/gallery/palentino/gallery2.jpg"),
+                    thumbnail: require("@/assets/gallery/palentino/gallery2.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Plantation-Shutter.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Plantation-Shutter.jpg',
+                    src: require("@/assets/gallery/palentino/gallery3.jpg"),
+                    thumbnail: require("@/assets/gallery/palentino/gallery3.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
@@ -304,29 +304,29 @@ export default {
             ],
             imageAwnings: [
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Wire-Guide-Awning-2.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Wire-Guide-Awning-2.jpg',
+                    src: require("@/assets/gallery/awnings/gallery1.jpg"),
+                    thumbnail: require("@/assets/gallery/awnings/gallery1.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Crank-Straight-Drop-Awning.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Crank-Straight-Drop-Awning.jpg',
+                    src: require("@/assets/gallery/awnings/gallery2.jpg"),
+                    thumbnail: require("@/assets/gallery/awnings/gallery2.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Fixed-Guide-Awning.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Fixed-Guide-Awning.jpg',
+                    src: require("@/assets/gallery/awnings/gallery3.jpg"),
+                    thumbnail: require("@/assets/gallery/awnings/gallery3.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Wire-Guide-Awning-1.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Wire-Guide-Awning-1.jpg',
+                    src: require("@/assets/gallery/awnings/gallery4.jpg"),
+                    thumbnail: require("@/assets/gallery/awnings/gallery4.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
@@ -334,15 +334,15 @@ export default {
             ],
             imageZipSreens: [
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Zipscreen-2.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Zipscreen-2.jpg',
+                    src: require("@/assets/gallery/screen/gallery1.jpg"),
+                    thumbnail: require("@/assets/gallery/screen/gallery1.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Zipscreen.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Zipscreen.jpg',
+                    src: require("@/assets/gallery/screen/gallery2.jpg"),
+                    thumbnail: require("@/assets/gallery/screen/gallery2.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
@@ -350,15 +350,15 @@ export default {
             ],
             imageFoldAwnings: [
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Folding-Arm-Awning-2.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Folding-Arm-Awning-2.jpg',
+                    src: require("@/assets/gallery/folding/gallery1.jpg"),
+                    thumbnail: require("@/assets/gallery/folding/gallery1.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Folding-Arm-Awning.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Folding-Arm-Awning.jpg',
+                    src: require("@/assets/gallery/folding/gallery2.jpg"),
+                    thumbnail: require("@/assets/gallery/folding/gallery2.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
@@ -366,29 +366,29 @@ export default {
             ],
             imageSecuritys: [
                 {
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Security-Door.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Security-Door.jpg',
+                    src: require("@/assets/gallery/security/gallery1.jpg"),
+                    thumbnail: require("@/assets/gallery/security/gallery1.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Security-Door-2.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Security-Door-2.jpg',
+                    src: require("@/assets/gallery/security/gallery2.jpg"),
+                    thumbnail: require("@/assets/gallery/security/gallery2.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Security-Door-3.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Security-Door-3.jpg',
+                    src: require("@/assets/gallery/security/gallery3.jpg"),
+                    thumbnail: require("@/assets/gallery/security/gallery3.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'
                 },
                 { 
-                    src: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Security-Door.jpg',
-                    thumbnail: 'http://bwindowcovers.com.au/wp-content/uploads/2016/07/Security-Door.jpg',
+                    src: require("@/assets/gallery/security/gallery4.jpg"),
+                    thumbnail: require("@/assets/gallery/security/gallery4.jpg"),
                     w: 600,
                     h: 400,
                     alt: 'some numbers on a grey background'

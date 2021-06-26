@@ -1,6 +1,7 @@
 <template>
     <Header />
-    <div class="contact-background">
+    <div class="contact-background"
+        :style="{ backgroundImage: 'url(' + require(`@/assets/image/banner-indoor.jpg`) + ')' }">
         <p>Reach Us At</p>
     </div>
     <div style="width: 80%; margin: 0px auto;" class="contact-page">
@@ -114,7 +115,7 @@ export default {
 </style>
 <style lang="scss" scoped>
     .contact-background {
-        background: url(http://bwindowcovers.com.au/wp-content/uploads/2014/11/bg1.jpg) center center no-repeat scroll;
+        background: center center no-repeat scroll;
         height: 500px;
         opacity: 1;
         padding: 0px;
