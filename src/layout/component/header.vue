@@ -61,33 +61,7 @@
     },
     setup() {
       const items = [
-        {
-          src:
-            "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide3.jpg",
-          interval: 5000,
-          alt: "World Class Design",
-          label: "WORLD CLASS DESIGN",
-          caption:
-            "A job is not complete to us until every single details is taken care of, thats we are rated the best globally",
-        },
-        {
-          src:
-            "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide4.jpg",
-          interval: 5000,
-          alt: "10 Year Experience",
-          label: "10 YEAR EXPERIENCE",
-          caption:
-            "Simplicity is at the heart of our design, we make complex things look and feel simple",
-        },
-        {
-          src:
-            "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide5.jpg",
-          interval: 5000,
-          alt: "Stunning Window Covers",
-          label: "STUNNING WINDOW COVERS",
-          caption:
-            "Simplicity is at the heart of our design, we make complex things look and feel simple",
-        },
+        
       ];
       const carousel = ref(0);
   

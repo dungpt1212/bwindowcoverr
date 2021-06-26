@@ -70,9 +70,8 @@ export default {
       ],
       itemsBanners: [
         {
-          src:
-            "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide3.jpg",
-          interval: 150000,
+          src: require("@/assets/banner-home/slide1.jpg"),
+          interval: 1500,
           alt: "World Class Design",
           label: "WORLD CLASS DESIGN",
           color: "#e81010",
@@ -80,9 +79,8 @@ export default {
             "A job is not complete to us until every single details is taken care of, thats we are rated the best globally",
         },
         {
-          src:
-            "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide4.jpg",
-          interval: 150000,
+          src: require("@/assets/banner-home/slide2.jpg"),
+          interval: 1500,
           alt: "10 Year Experience",
           label: "10 YEAR EXPERIENCE",
           color: "#e81010",
@@ -90,9 +88,8 @@ export default {
             "Simplicity is at the heart of our design, we make complex things look and feel simple",
         },
         {
-          src:
-            "http://bwindowcovers.com.au/wp-content/uploads/2016/07/slide5.jpg",
-          interval: 150000,
+          src: require("@/assets/banner-home/slide3.jpg"),
+          interval: 1500,
           alt: "Stunning Window Covers",
           label: "STUNNING WINDOW COVERS",
           color: "#656463",
@@ -102,41 +99,41 @@ export default {
       ],
       items: [
         {
-          src: "http://bwindowcovers.com.au/wp-content/uploads/2014/10/p3.jpg",
+          src: require("@/assets/banner-about/slide1.jpg"),
           interval: 1500,
         },
         {
-          src: "http://bwindowcovers.com.au/wp-content/uploads/2014/10/p2.jpg",
+          src: require("@/assets/banner-about/slide2.jpg"),
           interval: 1500,
         },
         {
-          src: "http://bwindowcovers.com.au/wp-content/uploads/2014/10/p16.jpg",
+          src: require("@/assets/banner-about/slide3.jpg"),
           interval: 1500,
         },
         {
-          src: "http://bwindowcovers.com.au/wp-content/uploads/2014/10/p9.jpg",
+          src: require("@/assets/banner-about/slide4.jpg"),
           interval: 1500,
         },
       ],
       itemsTeminals: [
         {
-          src: "http://bwindowcovers.com.au/wp-content/uploads/2014/10/IMG_0018.jpg",
+          src: require("@/assets/banner-teminal/slide1.jpg"),
           interval: 1500,
         },
         {
-          src: "http://bwindowcovers.com.au/wp-content/uploads/2014/10/IMG_0019.jpg",
+          src: require("@/assets/banner-teminal/slide2.jpg"),
           interval: 1500,
         },
         {
-          src: "http://bwindowcovers.com.au/wp-content/uploads/2014/10/IMG_0020.jpg",
+          src: require("@/assets/banner-teminal/slide3.jpg"),
           interval: 1500,
         },
         {
-          src: "http://bwindowcovers.com.au/wp-content/uploads/2014/10/IMG_0016.jpg",
+          src: require("@/assets/banner-teminal/slide4.jpg"),
           interval: 1500,
         },
         {
-          src: "http://bwindowcovers.com.au/wp-content/uploads/2014/10/IMG_0021.jpg",
+          src: require("@/assets/banner-teminal/slide5.jpg"),
           interval: 1500,
         },
       ],

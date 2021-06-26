@@ -1,13 +1,14 @@
 <template>
     <Header />
-    <div class="indoor-background">
-        <p>OUTDOOR</p>
+    <div class="indoor-background"
+        :style="{ backgroundImage: 'url(' + require(`@/assets/image/banner-indoor.jpg`) + ')' }">
+        <p>SECURITY</p>
     </div>
     <div style="width: 70%; margin: 0px auto;">
         <MDBRow>
             <MDBCol sm="6" md="6" lg="6" xl="4">
                 <div class="col-example">
-                    <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/RS.jpe" style="width: 100%;" />
+                    <img src="@/assets/indoor/product1.jpg" style="width: 100%;" />
                     <p class="title">ROLLER SHUTTERS</p>
                     <p>The roller shutters offer the security, privacy, heat and cold control as well as the total light control.</p>
                     <p>Our roller shutter range is designed for use on windows, sliding doors, bay windows, corner windows and other applications. We currently have 15 colour range available for choice</p>
@@ -15,7 +16,7 @@
             </MDBCol>
             <MDBCol sm="6" md="6" lg="6" xl="4">
                 <div class="col-example">
-                    <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/SD.jpe" style="width: 100%;" />
+                    <img src="@/assets/indoor/product2.jpg" style="width: 100%;" />
                     <p class="title">SECURITY DOORS AND FLY DOORS</p>
                     <p>Screen doors provide a visual deterrent and effective protection against uninvited guests and bothersome bugs. They can be hinged (security doors) or sliding (fly doors).</p>
                     <p>The wide range of grilles in colours and shapes are available to be fitted into all doors as the add-on safety and charming to the house</p>
@@ -24,7 +25,7 @@
             </MDBCol>
             <MDBCol sm="6" md="6" lg="6" xl="4">
                 <div class="col-example">
-                    <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/FS.jpe" style="width: 100%;" />
+                    <img src="@/assets/indoor/product3.jpg" style="width: 100%;" />
                     <p class="title">FLY SCREEN/INSECT SCREEN</p>
                     <p>Fly Screens are the perfect way to stay bug-free and can be fitted to many different types of windows and openings</p>
                     <p>Frames are 9mm or 11mm in thickness and available in a wide range of standard colorbond colors or can be powder coated in the colour of your choice to match or complement existing window frames at the additional price</p>
@@ -33,14 +34,14 @@
             </MDBCol>
             <MDBCol sm="6" md="6" lg="6" xl="4">
                 <div class="col-example">
-                    <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/SW.jpe" style="width: 100%;" />
+                    <img src="@/assets/indoor/product4.jpg" style="width: 100%;" />
                     <p class="title">SECURITY WINDOWS (Security Grills)</p>
                     <p>Security window is non-removable; it offers security for the window openings. It is more economical option compared to the window roller shutters.</p>
                 </div>
             </MDBCol>
             <MDBCol sm="6" md="6" lg="6" xl="4">
                 <div class="col-example">
-                    <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/cs-300x168.jpe" style="width: 100%;" />
+                    <img src="@/assets/indoor/product5.jpg" style="width: 100%;" />
                     <p class="title">CRIME SAFE</p>
                     <p>is a brand of stainless steel security mesh and frame system. It is used to secure doors, windows and outdoor areas from intruders and insects alike</p>
                 </div>
@@ -81,7 +82,7 @@ export default {
 
 <style lang="scss" scoped>
     .indoor-background {
-        background: url(http://bwindowcovers.com.au/wp-content/uploads/2016/07/bg.jpg) center bottom fixed;
+        background: center bottom fixed;
         height: 300px;
         margin-bottom: 20px;
         position: relative;

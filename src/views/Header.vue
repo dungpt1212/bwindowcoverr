@@ -33,7 +33,7 @@
           </ul>
         </MDBNavbarItem>
         <MDBNavbarItem to="#" class="w-300px">
-          <router-link to="/"> <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/BWClogo.png"> </router-link>
+          <router-link to="/"> <img src="@/assets/logo.png"> </router-link>
         </MDBNavbarItem>
         <MDBNavbarItem to="#" class="pt-3 w-100px" :class="{ menu_active: $route.name == 'Gallery' }"> 
           <router-link to="/gallery"> GALLERY </router-link>
@@ -46,8 +46,8 @@
 
     <!-- Mobile, Ipad -->
     <MDBNavbar v-if="screenSize < 992" expand="lg" light bg="white" container position="sticky">
-      <!-- <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/BWClogo.png" style="margin-left:10%"> -->
-      <router-link to="/"> <img src="http://bwindowcovers.com.au/wp-content/uploads/2016/07/BWClogo.png" style="margin-left:10%"> </router-link>
+      <!-- <img src="@/assets/logo.png" style="margin-left:10%"> -->
+      <router-link to="/"> <img src="@/assets/logo.png" style="margin-left:10%"> </router-link>
       <button 
         class="navbar-toggler btn-navbar-toggler" 
         type="button"
