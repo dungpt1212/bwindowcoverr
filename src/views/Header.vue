@@ -83,7 +83,7 @@
           <router-link to="/gallery"> Gallery </router-link>
         </MDBListGroupItem>
         <MDBListGroupItem :class="{ menu_active: $route.name == 'Contact' }" tag="a" action>
-          <router-link to="/contact"> Contract </router-link>
+          <router-link to="/contact"> Contact </router-link>
         </MDBListGroupItem>
       </MDBListGroup>
     </MDBNavbar>
