@@ -410,7 +410,7 @@ export default {
     @media (max-width : 991px) {
         .image-swipe {
             img {
-                width: 48%;
+                width: 47%;
                 margin-bottom: 10px;
             }
         }
