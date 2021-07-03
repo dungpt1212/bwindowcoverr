@@ -10,24 +10,125 @@
         <MDBNavbarItem 
           to="#" 
           class="pt-3 pr-5 w-100px product" 
-          @mouseover="showSubMenu" 
-          @mouseleave="hideSubMenu"
+          @mouseover="showProductSubMenu1" 
+          @mouseleave="hideProductSubMenu1"
         > 
           <span :class="{ menu_active: $route.name == 'Indoor' || $route.name == 'Outdoor' || $route.name == 'Security' }">product</span> 
-          <ul v-if="showSubMenuFlag" class="sub-menu clearfix">
-            <li :class="{ menu_active: $route.name == 'Indoor'}">
+          <ul v-if="showProductSubMenuFlag1" class="sub-menu clearfix">
+            <li 
+              @mouseover="showProductSubMenu2(1)" 
+              @mouseleave="hideProductSubMenu2(1)"
+              style="position: relative;"
+            >
+              <a href="javascript:void(0)">
+                INTERNAL BLINDS 
+                <i class="fas fa-angle-right" style="transform: translateY(1px);"></i>
+              </a>
+              <ul v-if="showProductSubMenuFlag2.internal_blinds" class="sub-menu2">
+                <li>
+                  <a href="/indoor">
+                    <router-link to="/indoor">ROLLER BINDS</router-link>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indoor">
+                    <router-link to="/indoor">VERTICAL BINDS</router-link>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indoor">
+                    <router-link to="/indoor">ROMAN BINDS</router-link>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indoor">
+                    <router-link to="/indoor">VENETIAN BINDS</router-link>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indoor">
+                    <router-link to="/indoor">PANEL GLIDE BIND</router-link>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li 
+              @mouseover="showProductSubMenu2(2)" 
+              @mouseleave="hideProductSubMenu2(2)"
+              style="position: relative;"
+            >
+              <a href="javascript:void(0)">
+                CURTAINS
+                <i class="fas fa-angle-right" style="transform: translateY(1px);"></i>
+              </a>
+              <ul v-if="showProductSubMenuFlag2.curtains" class="sub-menu2">
+                <li>
+                  <a href="/indoor">
+                    <router-link to="/indoor">S-FOLD/WAVE-FOLD</router-link>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indoor">
+                    <router-link to="/indoor">PLEATED</router-link>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indoor">
+                    <router-link to="/indoor">EYELET</router-link>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
               <a href="/indoor">
-                <router-link to="/indoor"> INDOOR </router-link>
+                <router-link to="/indoor">PALNTATION SHUTTERS</router-link>
               </a>
             </li>
-            <li :class="{ menu_active: $route.name == 'Outdoor'}">
-              <a href="/outdoor">
-                <router-link to="/outdoor"> OUTDOOR </router-link>
+            <li 
+              @mouseover="showProductSubMenu2(3)" 
+              @mouseleave="hideProductSubMenu2(3)"
+              style="position: relative;"
+            >
+              <a href="javascript:void(0)">
+                EXTERNAL AWINGS
+                <i class="fas fa-angle-right" style="transform: translateY(1px);"></i>
+              </a>
+              <ul v-if="showProductSubMenuFlag2.external_awings" class="sub-menu2">
+                <li>
+                  <a href="/indoor">
+                    <router-link to="/indoor">ZIPSCREENS</router-link>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indoor">
+                    <router-link to="/indoor">FOLDING</router-link>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indoor">
+                    <router-link to="/indoor">AWNINGS</router-link>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/indoor">
+                <router-link to="/indoor">ROLLER SHUTTERS</router-link>
               </a>
             </li>
-            <li :class="{ menu_active: $route.name == 'Security'}">
-              <a href="/security">
-                <router-link to="/security"> SECURITY </router-link>
+            <li>
+              <a href="/indoor">
+                <router-link to="/indoor">SECURITY DOORS/FLY DOORS</router-link>
+              </a>
+            </li>
+            <li>
+              <a href="/indoor">
+                <router-link to="/indoor">SECURITY WINDOWS</router-link>
+              </a>
+            </li>
+            <li>
+              <a href="/indoor">
+                <router-link to="/indoor">FLY SCREENS</router-link>
               </a>
             </li>
           </ul>
@@ -144,8 +245,15 @@ export default {
   data() {
     return {
       scrollPosition: 0,
-      showSubMenuFlag: false,
       screenSize: 0,
+      //flag for show submenu PC
+      showProductSubMenuFlag1: false,
+      showProductSubMenuFlag2: {
+        internal_blinds: false,
+        curtains : false,
+        external_awings  : false,
+      },
+      //flag for show submenu Mobile
       showMobileMenu: false,
       showMobileSubMenu: false,
     }
@@ -174,11 +282,29 @@ export default {
         }
       }
     },
-    showSubMenu () {
-      this.showSubMenuFlag = true;
+    showProductSubMenu1() {
+      this.showProductSubMenuFlag1 = true;
     },
-    hideSubMenu () {
-      this.showSubMenuFlag = false;
+    hideProductSubMenu1() {
+      this.showProductSubMenuFlag1 = false;
+    },
+    showProductSubMenu2(index) {
+      if (index == 1) {
+        this.showProductSubMenuFlag2.internal_blinds = true;
+      } else if (index == 2) {
+        this.showProductSubMenuFlag2.curtains = true;
+      } else if (index == 3) {
+        this.showProductSubMenuFlag2.external_awings = true;
+      }
+    },
+    hideProductSubMenu2(index) {
+      if (index == 1) {
+        this.showProductSubMenuFlag2.internal_blinds = false;
+      } else if (index == 2) {
+        this.showProductSubMenuFlag2.curtains = false;
+      } else if (index == 3) {
+        this.showProductSubMenuFlag2.external_awings = false;
+      }
     },
     handleResponsive () {
       this.screenSize = window.innerWidth;
@@ -274,7 +400,7 @@ export default {
 
     }
     ul.sub-menu {
-      width: 200px;
+      width: 280px;
       background: rgba(0,0,0,0.62);
       position: absolute;
       top: 70px;
@@ -290,6 +416,14 @@ export default {
           color: white;
         }
       }
+    }
+    ul.sub-menu2 {
+      position: absolute;
+      left: 247px;
+      width: 250px;
+      background: rgba(0,0,0,0.62);
+      list-style: unset;
+      top: 0px;
     }
     .btn-navbar-toggler {
       position: fixed;
