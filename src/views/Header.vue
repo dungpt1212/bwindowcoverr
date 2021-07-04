@@ -162,21 +162,88 @@
         </MDBListGroupItem>
         <MDBListGroupItem 
           tag="a" 
-          action 
-          @click="handleShowMobileSubMenu" 
+          action  
           style="cursor: pointer;"
         >
-          <span :class="{ menu_active: $route.name == 'Indoor' || $route.name == 'Outdoor' || $route.name == 'Security' }">Products</span>
-          <span class="fas fa-angle-right mobile-submenu-btn" style="font-size: 12px;float:right;margin-top:-8px;padding:15px;margin-right:-15px;"></span>
+          <span 
+            @click="handleShowMobileSubMenu" 
+            :class="{ menu_active: $route.name == 'Indoor' || $route.name == 'Outdoor' || $route.name == 'Security' }"
+          >
+            Products
+          </span>
+          <span 
+            @click="handleShowMobileSubMenu" 
+            class="fas fa-angle-right mobile-submenu-btn" style="font-size: 12px;float:right;margin-top:-8px;padding:15px;margin-right:-15px;">
+          </span>
           <ul style="list-style:none" class="mobile-submenu">
-            <li :class="{ menu_active: $route.name == 'Indoor' }">
-              <router-link to="/indoor"> indoor </router-link>
+            <li>
+              <span href="#" @click="handleShowMobileSubMenu2('internal_blinds')">
+                INTERNAL BLINDS <i class="fas fa-angle-right mobile-submenu-btn2 internal_blinds" style="font-size: 12px;"></i>
+              </span>
+              <ul style="list-style:none" class="mobile-submenu2 internal_blinds">
+                <li>
+                  <router-link to="/indoor">ROLLER BINDS</router-link>
+                </li>
+                <li>
+                  <router-link to="/indoor">VERTICAL BINDS</router-link>
+                </li>
+                <li>
+                  <router-link to="/indoor">ROMAN BINDS</router-link>
+                </li>
+                <li>
+                  <router-link to="/indoor">VENETIAN BINDS</router-link>
+                </li>
+                <li>
+                  <router-link to="/indoor">PANEL GLIDE BIND</router-link>
+                </li>
+              </ul>
             </li>
-            <li :class="{ menu_active: $route.name == 'Outdoor' }">
-              <router-link to="/outdoor"> outdoor </router-link>
+            <li>
+              <span href="#" @click="handleShowMobileSubMenu2('curtains')">
+                CURTAINS <i class="fas fa-angle-right mobile-submenu-btn2 curtains" style="font-size: 12px;"></i>
+              </span>
+              <ul style="list-style:none" class="mobile-submenu2 curtains">
+                <li>
+                  <router-link to="/indoor">S-FOLD/WAVE-FOLD</router-link>
+                </li>
+                <li>
+                  <router-link to="/indoor">PLEATED</router-link>
+                </li>
+                <li>
+                  <router-link to="/indoor">EYELET</router-link>
+                </li>
+              </ul>
             </li>
-            <li :class="{ menu_active: $route.name == 'Security' }">
-              <router-link to="/security"> security </router-link>
+            <li>
+              <router-link to="/indoor">PALNTATION SHUTTERS</router-link>
+            </li>
+            <li>
+              <span href="#" @click="handleShowMobileSubMenu2('external_awings')">
+                EXTERNAL AWINGS <i class="fas fa-angle-right mobile-submenu-btn2 external_awings" style="font-size: 12px;"></i>
+              </span>
+              <ul style="list-style:none" class="mobile-submenu2 external_awings">
+                <li>
+                  <router-link to="/indoor">ZIPSCREENS</router-link>
+                </li>
+                <li>
+                  <router-link to="/indoor">FOLDING</router-link>
+                </li>
+                <li>
+                  <router-link to="/indoor">AWNINGS</router-link>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <router-link to="/indoor">ROLLER SHUTTERS</router-link>
+            </li>
+            <li>
+              <router-link to="/indoor">SECURITY DOORS/FLY DOORS</router-link>
+            </li>
+            <li>
+              <router-link to="/indoor">SECURITY WINDOWS</router-link>
+            </li>
+            <li>
+              <router-link to="/indoor">FLY SCREENS</router-link>
             </li>
           </ul>
         </MDBListGroupItem>
@@ -250,12 +317,14 @@ export default {
       showProductSubMenuFlag1: false,
       showProductSubMenuFlag2: {
         internal_blinds: false,
-        curtains : false,
-        external_awings  : false,
+        curtains: false,
+        external_awings: false,
       },
       //flag for show submenu Mobile
       showMobileMenu: false,
       showMobileSubMenu: false,
+      showMobileSubMenu2: false,
+      currentSubmenu2Class: '',
     }
   },
   methods: {
@@ -327,6 +396,25 @@ export default {
         $('ul.mobile-submenu').slideUp();
         $('.mobile-submenu-btn').removeClass('fa-angle-down');
         $('.mobile-submenu-btn').addClass('fa-angle-right');
+      }
+    },
+    handleShowMobileSubMenu2(class_name) {
+      if (this.currentSubmenu2Class !== class_name) {
+        this.currentSubmenu2Class = class_name;
+        this.showMobileSubMenu2 = false;
+      }
+      this.showMobileSubMenu2 = !this.showMobileSubMenu2;
+      $('ul.mobile-submenu2').slideUp();
+      $('.mobile-submenu-btn2').removeClass('fa-angle-down');
+      $('.mobile-submenu-btn2').addClass('fa-angle-right');
+      if (this.showMobileSubMenu2) {
+        $('ul.mobile-submenu2.' + class_name).slideDown();
+        $('.mobile-submenu-btn2.' + class_name).removeClass('fa-angle-right');
+        $('.mobile-submenu-btn2.' + class_name).addClass('fa-angle-down');
+      } else {
+        $('ul.mobile-submenu2.' + class_name).slideUp();
+        $('.mobile-submenu-btn2.' + class_name).removeClass('fa-angle-down');
+        $('.mobile-submenu-btn2.' + class_name).addClass('fa-angle-right');
       }
     }
   },
@@ -448,6 +536,9 @@ export default {
         margin-top: 12px;
         li {
           margin-bottom: 5px;
+        }
+        ul.mobile-submenu2 {
+          display: none;
         }
       }
       a:hover {
