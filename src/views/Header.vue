@@ -27,27 +27,27 @@
               <ul v-if="showProductSubMenuFlag2.internal_blinds" class="sub-menu2">
                 <li>
                   <a href="/indoor">
-                    <router-link to="/indoor">ROLLER BINDS</router-link>
+                    <router-link :to="{ name: 'Product', params: { id: 'roller_binds' }}">ROLLER BINDS</router-link>
                   </a>
                 </li>
                 <li>
                   <a href="/indoor">
-                    <router-link to="/indoor">VERTICAL BINDS</router-link>
+                    <router-link :to="{ name: 'Product', params: { id: 'vertical_binds' }}">VERTICAL BINDS</router-link>
                   </a>
                 </li>
                 <li>
                   <a href="/indoor">
-                    <router-link to="/indoor">ROMAN BINDS</router-link>
+                    <router-link :to="{ name: 'Product', params: { id: 'roman_binds' }}">ROMAN BINDS</router-link>
                   </a>
                 </li>
                 <li>
                   <a href="/indoor">
-                    <router-link to="/indoor">VENETIAN BINDS</router-link>
+                    <router-link :to="{ name: 'Product', params: { id: 'venetian_binds' }}">VENETIAN BINDS</router-link>
                   </a>
                 </li>
                 <li>
                   <a href="/indoor">
-                    <router-link to="/indoor">PANEL GLIDE BIND</router-link>
+                    <router-link :to="{ name: 'Product', params: { id: 'panel_glide_bind' }}">PANEL GLIDE BIND</router-link>
                   </a>
                 </li>
               </ul>
@@ -64,24 +64,24 @@
               <ul v-if="showProductSubMenuFlag2.curtains" class="sub-menu2">
                 <li>
                   <a href="/indoor">
-                    <router-link to="/indoor">S-FOLD/WAVE-FOLD</router-link>
+                    <router-link :to="{ name: 'Product', params: { id: 'wave_fold' }}">S-FOLD/WAVE-FOLD</router-link>
                   </a>
                 </li>
                 <li>
                   <a href="/indoor">
-                    <router-link to="/indoor">PLEATED</router-link>
+                    <router-link :to="{ name: 'Product', params: { id: 'pleated' }}">PLEATED</router-link>
                   </a>
                 </li>
                 <li>
                   <a href="/indoor">
-                    <router-link to="/indoor">EYELET</router-link>
+                    <router-link :to="{ name: 'Product', params: { id: 'eyelet' }}">EYELET</router-link>
                   </a>
                 </li>
               </ul>
             </li>
             <li>
               <a href="/indoor">
-                <router-link to="/indoor">PALNTATION SHUTTERS</router-link>
+                <router-link :to="{ name: 'Product', params: { id: 'palntation_shutters' }}">PALNTATION SHUTTERS</router-link>
               </a>
             </li>
             <li 
@@ -96,39 +96,39 @@
               <ul v-if="showProductSubMenuFlag2.external_awings" class="sub-menu2">
                 <li>
                   <a href="/indoor">
-                    <router-link to="/indoor">ZIPSCREENS</router-link>
+                    <router-link :to="{ name: 'Product', params: { id: 'zipscreen' }}">ZIPSCREENS</router-link>
                   </a>
                 </li>
                 <li>
                   <a href="/indoor">
-                    <router-link to="/indoor">FOLDING</router-link>
+                    <router-link :to="{ name: 'Product', params: { id: 'folding' }}">FOLDING</router-link>
                   </a>
                 </li>
                 <li>
                   <a href="/indoor">
-                    <router-link to="/indoor">AWNINGS</router-link>
+                    <router-link :to="{ name: 'Product', params: { id: 'awnings' }}">AWNINGS</router-link>
                   </a>
                 </li>
               </ul>
             </li>
             <li>
               <a href="/indoor">
-                <router-link to="/indoor">ROLLER SHUTTERS</router-link>
+                <router-link :to="{ name: 'Product', params: { id: 'roller_shutters' }}">ROLLER SHUTTERS</router-link>
               </a>
             </li>
             <li>
               <a href="/indoor">
-                <router-link to="/indoor">SECURITY DOORS/FLY DOORS</router-link>
+                <router-link :to="{ name: 'Product', params: { id: 'security_door' }}">SECURITY DOORS/FLY DOORS</router-link>
               </a>
             </li>
             <li>
               <a href="/indoor">
-                <router-link to="/indoor">SECURITY WINDOWS</router-link>
+                <router-link :to="{ name: 'Product', params: { id: 'security_windows' }}">SECURITY WINDOWS</router-link>
               </a>
             </li>
             <li>
               <a href="/indoor">
-                <router-link to="/indoor">FLY SCREENS</router-link>
+                <router-link :to="{ name: 'Product', params: { id: 'fly_screen' }}">FLY SCREENS</router-link>
               </a>
             </li>
           </ul>
@@ -182,19 +182,19 @@
               </span>
               <ul style="list-style:none" class="mobile-submenu2 internal_blinds">
                 <li>
-                  <router-link to="/indoor">ROLLER BINDS</router-link>
+                  <router-link to="/product">ROLLER BINDS</router-link>
                 </li>
                 <li>
-                  <router-link to="/indoor">VERTICAL BINDS</router-link>
+                  <router-link to="/product">VERTICAL BINDS</router-link>
                 </li>
                 <li>
-                  <router-link to="/indoor">ROMAN BINDS</router-link>
+                  <router-link to="/product">ROMAN BINDS</router-link>
                 </li>
                 <li>
-                  <router-link to="/indoor">VENETIAN BINDS</router-link>
+                  <router-link to="/product">VENETIAN BINDS</router-link>
                 </li>
                 <li>
-                  <router-link to="/indoor">PANEL GLIDE BIND</router-link>
+                  <router-link to="/product">PANEL GLIDE BIND</router-link>
                 </li>
               </ul>
             </li>
@@ -204,18 +204,18 @@
               </span>
               <ul style="list-style:none" class="mobile-submenu2 curtains">
                 <li>
-                  <router-link to="/indoor">S-FOLD/WAVE-FOLD</router-link>
+                  <router-link to="/product">S-FOLD/WAVE-FOLD</router-link>
                 </li>
                 <li>
-                  <router-link to="/indoor">PLEATED</router-link>
+                  <router-link to="/product">PLEATED</router-link>
                 </li>
                 <li>
-                  <router-link to="/indoor">EYELET</router-link>
+                  <router-link to="/product">EYELET</router-link>
                 </li>
               </ul>
             </li>
             <li>
-              <router-link to="/indoor">PALNTATION SHUTTERS</router-link>
+              <router-link to="/product">PALNTATION SHUTTERS</router-link>
             </li>
             <li>
               <span href="#" @click="handleShowMobileSubMenu2('external_awings')">
@@ -223,27 +223,27 @@
               </span>
               <ul style="list-style:none" class="mobile-submenu2 external_awings">
                 <li>
-                  <router-link to="/indoor">ZIPSCREENS</router-link>
+                  <router-link to="/product">ZIPSCREENS</router-link>
                 </li>
                 <li>
-                  <router-link to="/indoor">FOLDING</router-link>
+                  <router-link to="/product">FOLDING</router-link>
                 </li>
                 <li>
-                  <router-link to="/indoor">AWNINGS</router-link>
+                  <router-link to="/product">AWNINGS</router-link>
                 </li>
               </ul>
             </li>
             <li>
-              <router-link to="/indoor">ROLLER SHUTTERS</router-link>
+              <router-link to="/product">ROLLER SHUTTERS</router-link>
             </li>
             <li>
-              <router-link to="/indoor">SECURITY DOORS/FLY DOORS</router-link>
+              <router-link to="/product">SECURITY DOORS/FLY DOORS</router-link>
             </li>
             <li>
-              <router-link to="/indoor">SECURITY WINDOWS</router-link>
+              <router-link to="/product">SECURITY WINDOWS</router-link>
             </li>
             <li>
-              <router-link to="/indoor">FLY SCREENS</router-link>
+              <router-link to="/product">FLY SCREENS</router-link>
             </li>
           </ul>
         </MDBListGroupItem>
