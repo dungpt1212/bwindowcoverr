@@ -59,9 +59,9 @@ export default {
         getListCarousel() {
             this.key ++
             switch (this.$route.params.id) {
-                case 'roller_binds':
+                case 'roller_blinds':
                     this.itemsBanners = {
-                        title: 'ROLLER BINDS',
+                        title: 'ROLLER BLINDS',
                         description: 'are practical and affordable. Choose or use combination a wide variety of 100% blockout, sheer and light filtering fabrics to achieve the highest level of light control and UV/heat protection. Our Roller Blind system is chain driven that allows the up & down operation to be easy and smoothly. Chains are available in metal and stainlesssteel which are even stronger lasting than plastics. Alternatively, Roller Blind can be motorized and operated via remote control or wall switch. The aluminum bottom rail in a wide range of colours is available to enhance the perfect look of the blind',
                         data: [
                             {
@@ -83,9 +83,9 @@ export default {
                         ]
                     }
                     break;
-                case 'vertical_binds':
+                case 'vertical_blinds':
                     this.itemsBanners = {
-                        title: 'VERTICAL BINDS',
+                        title: 'VERTICAL BLINDS',
                         description: 'Curtains offer a diverse range of fabrics, colours, prints and floral. There are also no limitations on styles and shapes, from elegant and formal styles to pretty and casual to suit any room. Adding on the decorator rods, pelmets, swags and tails, curtains are luxurious and bring a sense of style to any home',
                         data: [
                             {
@@ -99,10 +99,10 @@ export default {
                         ]
                     }
                     break;
-                case 'roman_binds':
+                case 'roman_blinds':
                     this.itemsBanners = {
                         description: 'Panel blinds are a stylish modern alternative to vertical blinds and are an ideal choice for sliding doors and wide windows, and can also used as perfect room divider.',
-                        title: 'ROMAN BINDS',
+                        title: 'ROMAN BLINDS',
                         data: [
                             {
                                 src: require("@/assets/gallery/roman/gallery1.jpg"),
@@ -119,9 +119,9 @@ export default {
                         ]
                     }
                     break;
-                case 'venetian_binds':
+                case 'venetian_blinds':
                     this.itemsBanners = {
-                        title: 'VENETIAN BINDS',
+                        title: 'VENETIAN BLINDS',
                         description: 'have the most elegant and classic look. A vast selection of colour, design and texture in fabrics is available to suit individual taste and every application.Cord-lock operation with wall-mounted cleat is preferred whereas chain drive with Metal Chain and Aluminium head rail can be as another option for ease of operation. Remote control motorised operation is also available for the convenient choice',
                         data: [
                             {
@@ -135,9 +135,9 @@ export default {
                         ]
                     }
                     break;
-                case 'panel_glide_bind':
+                case 'panel_glide_blind':
                     this.itemsBanners = {
-                        title: 'PANEL GLIDE BIND',
+                        title: 'PANEL GLIDE BLINDS',
                         description: 'Panel blinds are a stylish modern alternative to vertical blinds and are an ideal choice for sliding doors and wide windows, and can also used as perfect room divider.',
                         data: [
                             {
@@ -183,9 +183,9 @@ export default {
                         ]
                     }
                     break;
-                case 'palntation_shutters':
+                case 'plantation_shutters':
                     this.itemsBanners = {
-                        title: 'PALNTATION SHUTTERS',
+                        title: 'PLANTATION SHUTTERS',
                         description: 'Curtains offer a diverse range of fabrics, colours, prints and floral. There are also no limitations on styles and shapes, from elegant and formal styles to pretty and casual to suit any room. Adding on the decorator rods, pelmets, swags and tails, curtains are luxurious and bring a sense of style to any home',
                         data: [
                             {
