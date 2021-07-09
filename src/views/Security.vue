@@ -39,13 +39,6 @@
                     <p>Security window is non-removable; it offers security for the window openings. It is more economical option compared to the window roller shutters.</p>
                 </div>
             </MDBCol>
-            <MDBCol sm="6" md="6" lg="6" xl="4">
-                <div class="col-example">
-                    <img src="@/assets/indoor/product5.jpg" style="width: 100%;" />
-                    <p class="title">CRIME SAFE</p>
-                    <p>is a brand of stainless steel security mesh and frame system. It is used to secure doors, windows and outdoor areas from intruders and insects alike</p>
-                </div>
-            </MDBCol>
         </MDBRow>
     </div>
     <div class="contact">

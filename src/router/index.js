@@ -3,6 +3,7 @@ import Home from '@/views/Home.vue'
 import Gallery from '@/views/Gallery.vue'
 import Indoor from '@/views/Indoor.vue'
 import Outdoor from '@/views/Outdoor.vue'
+import Product from '@/views/Product.vue'
 import Security from '@/views/Security.vue'
 import Contact from '@/views/Contact.vue'
 
@@ -26,6 +27,11 @@ const routes = [
     path: '/outdoor',
     name: 'Outdoor',
     component: Outdoor
+  },
+  {
+    path: '/product/:id',
+    name: 'Product',
+    component: Product
   },
   {
     path: '/security',

@@ -8,7 +8,7 @@
         <MDBRow>
             <MDBCol sm="6" md="6" lg="6" xl="4">
                 <div class="col-example">
-                    <img src="@/assets/indoor/product1.jpg" style="width: 100%;" />
+                    <img src="@/assets/gallery/awnings/gallery1.jpg" style="width: 100%;" />
                     <p class="title">AWNINGS</p>
                     <p>is used to protect your house and family from harsh Melbourne climate by eliminating sunlight, heat and glare on to your window. Our custom made awnings offer you all kinds of delightful design and finishing options to suit your specific needs.</p>
                     <p>You can choose from the finest quality canvas, sunscreen or acrylic materials in a traditional striped designs or plain fashion colour</p>
@@ -18,14 +18,14 @@
             </MDBCol>
             <MDBCol sm="6" md="6" lg="6" xl="4">
                 <div class="col-example">
-                    <img src="@/assets/indoor/product2.jpg" style="width: 100%;" />
+                    <img src="@/assets/gallery/screen/gallery1.jpg" style="width: 100%;" />
                     <p class="title">ZIPSCREEN </p>
                     <p>The Zipscreen System is the ultimate external screening solution for any outdoor areas and windows. Specifically designed for alfresco entertaining areas such as pergolas, verandahs and balconies, it offers privacy and protection from the sun, wind, rain and insects all year around.</p>
                 </div>
             </MDBCol>
             <MDBCol sm="6" md="6" lg="6" xl="4">
                 <div class="col-example">
-                    <img src="@/assets/indoor/product3.jpg" style="width: 100%;" />
+                    <img src="@/assets/gallery/folding/gallery1.jpg" style="width: 100%;" />
                     <p class="title">FOLDING ARM AWNINGS</p>
                     <p>Unlikely other awning designs, the Folding Arm Awning extends horizontally and not vertically, therefore, it is the ideal to be used for decks, patios and balconies.</p>
                     <p>Folding arm awnings can be operated manually using a crank handle.</p>

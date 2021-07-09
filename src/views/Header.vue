@@ -10,24 +10,125 @@
         <MDBNavbarItem 
           to="#" 
           class="pt-3 pr-5 w-100px product" 
-          @mouseover="showSubMenu" 
-          @mouseleave="hideSubMenu"
+          @mouseover="showProductSubMenu1" 
+          @mouseleave="hideProductSubMenu1"
         > 
           <span :class="{ menu_active: $route.name == 'Indoor' || $route.name == 'Outdoor' || $route.name == 'Security' }">product</span> 
-          <ul v-if="showSubMenuFlag" class="sub-menu clearfix">
-            <li :class="{ menu_active: $route.name == 'Indoor'}">
+          <ul v-if="showProductSubMenuFlag1" class="sub-menu clearfix">
+            <li 
+              @mouseover="showProductSubMenu2(1)" 
+              @mouseleave="hideProductSubMenu2(1)"
+              style="position: relative;"
+            >
+              <a href="javascript:void(0)">
+                INTERNAL BLINDS 
+                <i class="fas fa-angle-right" style="transform: translateY(1px);"></i>
+              </a>
+              <ul v-if="showProductSubMenuFlag2.internal_blinds" class="sub-menu2">
+                <li>
+                  <a href="/indoor">
+                    <router-link :to="{ name: 'Product', params: { id: 'roller_binds' }}">ROLLER BINDS</router-link>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indoor">
+                    <router-link :to="{ name: 'Product', params: { id: 'vertical_binds' }}">VERTICAL BINDS</router-link>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indoor">
+                    <router-link :to="{ name: 'Product', params: { id: 'roman_binds' }}">ROMAN BINDS</router-link>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indoor">
+                    <router-link :to="{ name: 'Product', params: { id: 'venetian_binds' }}">VENETIAN BINDS</router-link>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indoor">
+                    <router-link :to="{ name: 'Product', params: { id: 'panel_glide_bind' }}">PANEL GLIDE BIND</router-link>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li 
+              @mouseover="showProductSubMenu2(2)" 
+              @mouseleave="hideProductSubMenu2(2)"
+              style="position: relative;"
+            >
+              <a href="javascript:void(0)">
+                CURTAINS
+                <i class="fas fa-angle-right" style="transform: translateY(1px);"></i>
+              </a>
+              <ul v-if="showProductSubMenuFlag2.curtains" class="sub-menu2">
+                <li>
+                  <a href="/indoor">
+                    <router-link :to="{ name: 'Product', params: { id: 'wave_fold' }}">S-FOLD/WAVE-FOLD</router-link>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indoor">
+                    <router-link :to="{ name: 'Product', params: { id: 'pleated' }}">PLEATED</router-link>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indoor">
+                    <router-link :to="{ name: 'Product', params: { id: 'eyelet' }}">EYELET</router-link>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
               <a href="/indoor">
-                <router-link to="/indoor"> INDOOR </router-link>
+                <router-link :to="{ name: 'Product', params: { id: 'palntation_shutters' }}">PALNTATION SHUTTERS</router-link>
               </a>
             </li>
-            <li :class="{ menu_active: $route.name == 'Outdoor'}">
-              <a href="/outdoor">
-                <router-link to="/outdoor"> OUTDOOR </router-link>
+            <li 
+              @mouseover="showProductSubMenu2(3)" 
+              @mouseleave="hideProductSubMenu2(3)"
+              style="position: relative;"
+            >
+              <a href="javascript:void(0)">
+                EXTERNAL AWINGS
+                <i class="fas fa-angle-right" style="transform: translateY(1px);"></i>
+              </a>
+              <ul v-if="showProductSubMenuFlag2.external_awings" class="sub-menu2">
+                <li>
+                  <a href="/indoor">
+                    <router-link :to="{ name: 'Product', params: { id: 'zipscreen' }}">ZIPSCREENS</router-link>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indoor">
+                    <router-link :to="{ name: 'Product', params: { id: 'folding' }}">FOLDING</router-link>
+                  </a>
+                </li>
+                <li>
+                  <a href="/indoor">
+                    <router-link :to="{ name: 'Product', params: { id: 'awnings' }}">AWNINGS</router-link>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/indoor">
+                <router-link :to="{ name: 'Product', params: { id: 'roller_shutters' }}">ROLLER SHUTTERS</router-link>
               </a>
             </li>
-            <li :class="{ menu_active: $route.name == 'Security'}">
-              <a href="/security">
-                <router-link to="/security"> SECURITY </router-link>
+            <li>
+              <a href="/indoor">
+                <router-link :to="{ name: 'Product', params: { id: 'security_door' }}">SECURITY DOORS/FLY DOORS</router-link>
+              </a>
+            </li>
+            <li>
+              <a href="/indoor">
+                <router-link :to="{ name: 'Product', params: { id: 'security_windows' }}">SECURITY WINDOWS</router-link>
+              </a>
+            </li>
+            <li>
+              <a href="/indoor">
+                <router-link :to="{ name: 'Product', params: { id: 'fly_screen' }}">FLY SCREENS</router-link>
               </a>
             </li>
           </ul>
@@ -61,21 +162,88 @@
         </MDBListGroupItem>
         <MDBListGroupItem 
           tag="a" 
-          action 
-          @click="handleShowMobileSubMenu" 
+          action  
           style="cursor: pointer;"
         >
-          <span :class="{ menu_active: $route.name == 'Indoor' || $route.name == 'Outdoor' || $route.name == 'Security' }">Products</span>
-          <span class="fas fa-angle-right mobile-submenu-btn" style="font-size: 12px;float:right;margin-top:-8px;padding:15px;margin-right:-15px;"></span>
+          <span 
+            @click="handleShowMobileSubMenu" 
+            :class="{ menu_active: $route.name == 'Indoor' || $route.name == 'Outdoor' || $route.name == 'Security' }"
+          >
+            Products
+          </span>
+          <span 
+            @click="handleShowMobileSubMenu" 
+            class="fas fa-angle-right mobile-submenu-btn" style="font-size: 12px;float:right;margin-top:-8px;padding:15px;margin-right:-15px;">
+          </span>
           <ul style="list-style:none" class="mobile-submenu">
-            <li :class="{ menu_active: $route.name == 'Indoor' }">
-              <router-link to="/indoor"> indoor </router-link>
+            <li>
+              <span href="#" @click="handleShowMobileSubMenu2('internal_blinds')">
+                INTERNAL BLINDS <i class="fas fa-angle-right mobile-submenu-btn2 internal_blinds" style="font-size: 12px;"></i>
+              </span>
+              <ul style="list-style:none" class="mobile-submenu2 internal_blinds">
+                <li>
+                  <router-link to="/product">ROLLER BINDS</router-link>
+                </li>
+                <li>
+                  <router-link to="/product">VERTICAL BINDS</router-link>
+                </li>
+                <li>
+                  <router-link to="/product">ROMAN BINDS</router-link>
+                </li>
+                <li>
+                  <router-link to="/product">VENETIAN BINDS</router-link>
+                </li>
+                <li>
+                  <router-link to="/product">PANEL GLIDE BIND</router-link>
+                </li>
+              </ul>
             </li>
-            <li :class="{ menu_active: $route.name == 'Outdoor' }">
-              <router-link to="/outdoor"> outdoor </router-link>
+            <li>
+              <span href="#" @click="handleShowMobileSubMenu2('curtains')">
+                CURTAINS <i class="fas fa-angle-right mobile-submenu-btn2 curtains" style="font-size: 12px;"></i>
+              </span>
+              <ul style="list-style:none" class="mobile-submenu2 curtains">
+                <li>
+                  <router-link to="/product">S-FOLD/WAVE-FOLD</router-link>
+                </li>
+                <li>
+                  <router-link to="/product">PLEATED</router-link>
+                </li>
+                <li>
+                  <router-link to="/product">EYELET</router-link>
+                </li>
+              </ul>
             </li>
-            <li :class="{ menu_active: $route.name == 'Security' }">
-              <router-link to="/security"> security </router-link>
+            <li>
+              <router-link to="/product">PALNTATION SHUTTERS</router-link>
+            </li>
+            <li>
+              <span href="#" @click="handleShowMobileSubMenu2('external_awings')">
+                EXTERNAL AWINGS <i class="fas fa-angle-right mobile-submenu-btn2 external_awings" style="font-size: 12px;"></i>
+              </span>
+              <ul style="list-style:none" class="mobile-submenu2 external_awings">
+                <li>
+                  <router-link to="/product">ZIPSCREENS</router-link>
+                </li>
+                <li>
+                  <router-link to="/product">FOLDING</router-link>
+                </li>
+                <li>
+                  <router-link to="/product">AWNINGS</router-link>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <router-link to="/product">ROLLER SHUTTERS</router-link>
+            </li>
+            <li>
+              <router-link to="/product">SECURITY DOORS/FLY DOORS</router-link>
+            </li>
+            <li>
+              <router-link to="/product">SECURITY WINDOWS</router-link>
+            </li>
+            <li>
+              <router-link to="/product">FLY SCREENS</router-link>
             </li>
           </ul>
         </MDBListGroupItem>
@@ -144,10 +312,19 @@ export default {
   data() {
     return {
       scrollPosition: 0,
-      showSubMenuFlag: false,
       screenSize: 0,
+      //flag for show submenu PC
+      showProductSubMenuFlag1: false,
+      showProductSubMenuFlag2: {
+        internal_blinds: false,
+        curtains: false,
+        external_awings: false,
+      },
+      //flag for show submenu Mobile
       showMobileMenu: false,
       showMobileSubMenu: false,
+      showMobileSubMenu2: false,
+      currentSubmenu2Class: '',
     }
   },
   methods: {
@@ -174,11 +351,29 @@ export default {
         }
       }
     },
-    showSubMenu () {
-      this.showSubMenuFlag = true;
+    showProductSubMenu1() {
+      this.showProductSubMenuFlag1 = true;
     },
-    hideSubMenu () {
-      this.showSubMenuFlag = false;
+    hideProductSubMenu1() {
+      this.showProductSubMenuFlag1 = false;
+    },
+    showProductSubMenu2(index) {
+      if (index == 1) {
+        this.showProductSubMenuFlag2.internal_blinds = true;
+      } else if (index == 2) {
+        this.showProductSubMenuFlag2.curtains = true;
+      } else if (index == 3) {
+        this.showProductSubMenuFlag2.external_awings = true;
+      }
+    },
+    hideProductSubMenu2(index) {
+      if (index == 1) {
+        this.showProductSubMenuFlag2.internal_blinds = false;
+      } else if (index == 2) {
+        this.showProductSubMenuFlag2.curtains = false;
+      } else if (index == 3) {
+        this.showProductSubMenuFlag2.external_awings = false;
+      }
     },
     handleResponsive () {
       this.screenSize = window.innerWidth;
@@ -201,6 +396,25 @@ export default {
         $('ul.mobile-submenu').slideUp();
         $('.mobile-submenu-btn').removeClass('fa-angle-down');
         $('.mobile-submenu-btn').addClass('fa-angle-right');
+      }
+    },
+    handleShowMobileSubMenu2(class_name) {
+      if (this.currentSubmenu2Class !== class_name) {
+        this.currentSubmenu2Class = class_name;
+        this.showMobileSubMenu2 = false;
+      }
+      this.showMobileSubMenu2 = !this.showMobileSubMenu2;
+      $('ul.mobile-submenu2').slideUp();
+      $('.mobile-submenu-btn2').removeClass('fa-angle-down');
+      $('.mobile-submenu-btn2').addClass('fa-angle-right');
+      if (this.showMobileSubMenu2) {
+        $('ul.mobile-submenu2.' + class_name).slideDown();
+        $('.mobile-submenu-btn2.' + class_name).removeClass('fa-angle-right');
+        $('.mobile-submenu-btn2.' + class_name).addClass('fa-angle-down');
+      } else {
+        $('ul.mobile-submenu2.' + class_name).slideUp();
+        $('.mobile-submenu-btn2.' + class_name).removeClass('fa-angle-down');
+        $('.mobile-submenu-btn2.' + class_name).addClass('fa-angle-right');
       }
     }
   },
@@ -274,7 +488,7 @@ export default {
 
     }
     ul.sub-menu {
-      width: 200px;
+      width: 280px;
       background: rgba(0,0,0,0.62);
       position: absolute;
       top: 70px;
@@ -290,6 +504,14 @@ export default {
           color: white;
         }
       }
+    }
+    ul.sub-menu2 {
+      position: absolute;
+      left: 247px;
+      width: 250px;
+      background: rgba(0,0,0,0.62);
+      list-style: unset;
+      top: 0px;
     }
     .btn-navbar-toggler {
       position: fixed;
@@ -314,6 +536,9 @@ export default {
         margin-top: 12px;
         li {
           margin-bottom: 5px;
+        }
+        ul.mobile-submenu2 {
+          display: none;
         }
       }
       a:hover {
