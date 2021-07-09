@@ -2,7 +2,7 @@
     <Header />
     <div class="indoor-background"
         :style="{ backgroundImage: 'url(' + require(`@/assets/image/banner-indoor.jpg`) + ')' }">
-        <p>PRODUCT</p>
+        <p>PRODUCTS</p>
     </div>
     <p class="title">{{ itemsBanners.title }}</p>
     <MDBCarousel v-model="carousel" :key="key" :items="itemsBanners.data" :indicators="false" class="slide-banner" />
@@ -23,7 +23,7 @@ export default {
     data() {
         return {
             itemsBanners: {
-                title: 'ROLLER BINDS',
+                title: 'ROLLER BLINDS',
                 description: 'are practical and affordable. Choose or use combination a wide variety of 100% blockout, sheer and light filtering fabrics to achieve the highest level of light control and UV/heat protection. Our Roller Blind system is chain driven that allows the up & down operation to be easy and smoothly. Chains are available in metal and stainlesssteel which are even stronger lasting than plastics. Alternatively, Roller Blind can be motorized and operated via remote control or wall switch. The aluminum bottom rail in a wide range of colours is available to enhance the perfect look of the blind',
                 data: [
                     {

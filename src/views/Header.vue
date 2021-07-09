@@ -13,7 +13,7 @@
           @mouseover="showProductSubMenu1" 
           @mouseleave="hideProductSubMenu1"
         > 
-          <span :class="{ menu_active: $route.name == 'Indoor' || $route.name == 'Outdoor' || $route.name == 'Security' }">product</span> 
+          <span :class="{ menu_active: $route.name == 'Indoor' || $route.name == 'Outdoor' || $route.name == 'Security' }">PRODUCTS</span> 
           <ul v-if="showProductSubMenuFlag1" class="sub-menu clearfix">
             <li 
               @mouseover="showProductSubMenu2(1)" 
