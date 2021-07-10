@@ -13,7 +13,7 @@
           @mouseover="showProductSubMenu1" 
           @mouseleave="hideProductSubMenu1"
         > 
-          <span :class="{ menu_active: $route.name == 'Indoor' || $route.name == 'Outdoor' || $route.name == 'Security' }">product</span> 
+          <span :class="{ menu_active: $route.name == 'Product' }">product</span> 
           <ul v-if="showProductSubMenuFlag1" class="sub-menu clearfix">
             <li 
               @mouseover="showProductSubMenu2(1)" 
@@ -167,7 +167,7 @@
         >
           <span 
             @click="handleShowMobileSubMenu" 
-            :class="{ menu_active: $route.name == 'Indoor' || $route.name == 'Outdoor' || $route.name == 'Security' }"
+            :class="{ menu_active: $route.name == 'Product' }"
           >
             Products
           </span>
@@ -182,19 +182,19 @@
               </span>
               <ul style="list-style:none" class="mobile-submenu2 internal_blinds">
                 <li>
-                  <router-link to="/product">ROLLER BINDS</router-link>
+                  <router-link :to="{ name: 'Product', params: { id: 'roller_binds' }}">ROLLER BINDS</router-link>
                 </li>
                 <li>
-                  <router-link to="/product">VERTICAL BINDS</router-link>
+                  <router-link :to="{ name: 'Product', params: { id: 'vertical_binds' }}">VERTICAL BINDS</router-link>
                 </li>
                 <li>
-                  <router-link to="/product">ROMAN BINDS</router-link>
+                  <router-link :to="{ name: 'Product', params: { id: 'roman_binds' }}">ROMAN BINDS</router-link>
                 </li>
                 <li>
-                  <router-link to="/product">VENETIAN BINDS</router-link>
+                  <router-link :to="{ name: 'Product', params: { id: 'venetian_binds' }}">VENETIAN BINDS</router-link>
                 </li>
                 <li>
-                  <router-link to="/product">PANEL GLIDE BIND</router-link>
+                  <router-link :to="{ name: 'Product', params: { id: 'panel_glide_bind' }}">PANEL GLIDE BIND</router-link>
                 </li>
               </ul>
             </li>
@@ -204,18 +204,18 @@
               </span>
               <ul style="list-style:none" class="mobile-submenu2 curtains">
                 <li>
-                  <router-link to="/product">S-FOLD/WAVE-FOLD</router-link>
+                  <router-link :to="{ name: 'Product', params: { id: 'wave_fold' }}">S-FOLD/WAVE-FOLD</router-link>
                 </li>
                 <li>
-                  <router-link to="/product">PLEATED</router-link>
+                  <router-link :to="{ name: 'Product', params: { id: 'pleated' }}">PLEATED</router-link>
                 </li>
                 <li>
-                  <router-link to="/product">EYELET</router-link>
+                  <router-link :to="{ name: 'Product', params: { id: 'eyelet' }}">EYELET</router-link>
                 </li>
               </ul>
             </li>
             <li>
-              <router-link to="/product">PALNTATION SHUTTERS</router-link>
+              <router-link :to="{ name: 'Product', params: { id: 'palntation_shutters' }}">PALNTATION SHUTTERS</router-link>
             </li>
             <li>
               <span href="#" @click="handleShowMobileSubMenu2('external_awings')">
@@ -223,27 +223,27 @@
               </span>
               <ul style="list-style:none" class="mobile-submenu2 external_awings">
                 <li>
-                  <router-link to="/product">ZIPSCREENS</router-link>
+                  <router-link :to="{ name: 'Product', params: { id: 'zipscreen' }}">ZIPSCREENS</router-link>
                 </li>
                 <li>
-                  <router-link to="/product">FOLDING</router-link>
+                  <router-link :to="{ name: 'Product', params: { id: 'folding' }}">FOLDING</router-link>
                 </li>
                 <li>
-                  <router-link to="/product">AWNINGS</router-link>
+                  <router-link :to="{ name: 'Product', params: { id: 'awnings' }}">AWNINGS</router-link>
                 </li>
               </ul>
             </li>
             <li>
-              <router-link to="/product">ROLLER SHUTTERS</router-link>
+              <router-link :to="{ name: 'Product', params: { id: 'roller_shutters' }}">ROLLER SHUTTERS</router-link>
             </li>
             <li>
-              <router-link to="/product">SECURITY DOORS/FLY DOORS</router-link>
+              <router-link :to="{ name: 'Product', params: { id: 'security_door' }}">SECURITY DOORS/FLY DOORS</router-link>
             </li>
             <li>
-              <router-link to="/product">SECURITY WINDOWS</router-link>
+              <router-link :to="{ name: 'Product', params: { id: 'security_windows' }}">SECURITY WINDOWS</router-link>
             </li>
             <li>
-              <router-link to="/product">FLY SCREENS</router-link>
+              <router-link :to="{ name: 'Product', params: { id: 'fly_screen' }}">FLY SCREENS</router-link>
             </li>
           </ul>
         </MDBListGroupItem>

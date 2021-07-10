@@ -5,7 +5,9 @@
         <p>PRODUCT</p>
     </div>
     <p class="title">{{ itemsBanners.title }}</p>
-    <MDBCarousel v-model="carousel" :key="key" :items="itemsBanners.data" :indicators="false" class="slide-banner" />
+    <div style="width: 1000px; margin: 0px auto;">
+        <MDBCarousel v-model="carousel" :key="key" :items="itemsBanners.data" :indicators="false" class="slide-banner-product" />
+    </div>
     <br><br>
     <div class="col-example" style="width: 70%; margin: 0px auto;">
         <p>{{ itemsBanners.description }}</p>
@@ -338,7 +340,15 @@ export default {
     }
 };
 </script>
-
+<style lang="scss">
+    .slide-banner-product {
+        img {
+            width: 1000px !important;
+            max-height: 600px !important;
+            margin: 0px auto;
+        }
+    }
+</style>
 <style lang="scss" scoped>
     .title {
         text-align: center;

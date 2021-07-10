@@ -71,7 +71,7 @@ export default {
       itemsBanners: [
         {
           src: require("@/assets/banner-home/slide1.jpg"),
-          interval: 1500,
+          interval: 2000,
           alt: "World Class Design",
           label: "WORLD CLASS DESIGN",
           color: "#e81010",
@@ -80,7 +80,7 @@ export default {
         },
         {
           src: require("@/assets/banner-home/slide2.jpg"),
-          interval: 1500,
+          interval: 2000,
           alt: "10 Year Experience",
           label: "10 YEAR EXPERIENCE",
           color: "#e81010",
@@ -89,7 +89,7 @@ export default {
         },
         {
           src: require("@/assets/banner-home/slide3.jpg"),
-          interval: 1500,
+          interval: 2000,
           alt: "Stunning Window Covers",
           label: "STUNNING WINDOW COVERS",
           color: "#656463",
@@ -100,41 +100,41 @@ export default {
       items: [
         {
           src: require("@/assets/banner-about/slide1.jpg"),
-          interval: 1500,
+          interval: 2000,
         },
         {
           src: require("@/assets/banner-about/slide2.jpg"),
-          interval: 1500,
+          interval: 2000,
         },
         {
           src: require("@/assets/banner-about/slide3.jpg"),
-          interval: 1500,
+          interval: 2000,
         },
         {
           src: require("@/assets/banner-about/slide4.jpg"),
-          interval: 1500,
+          interval: 2000,
         },
       ],
       itemsTeminals: [
         {
           src: require("@/assets/banner-teminal/slide1.jpg"),
-          interval: 1500,
+          interval: 2000,
         },
         {
           src: require("@/assets/banner-teminal/slide2.jpg"),
-          interval: 1500,
+          interval: 2000,
         },
         {
           src: require("@/assets/banner-teminal/slide3.jpg"),
-          interval: 1500,
+          interval: 2000,
         },
         {
           src: require("@/assets/banner-teminal/slide4.jpg"),
-          interval: 1500,
+          interval: 2000,
         },
         {
           src: require("@/assets/banner-teminal/slide5.jpg"),
-          interval: 1500,
+          interval: 2000,
         },
       ],
       itemsReplys: [
