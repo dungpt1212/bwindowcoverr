@@ -184,19 +184,19 @@
               </span>
               <ul style="list-style:none" class="mobile-submenu2 internal_blinds">
                 <li>
-                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'roller_binds' }}">ROLLER BINDS</router-link>
+                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'roller_blinds' }}">ROLLER BINDS</router-link>
                 </li>
                 <li>
-                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'vertical_binds' }}">VERTICAL BINDS</router-link>
+                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'vertical_blinds' }}">VERTICAL BINDS</router-link>
                 </li>
                 <li>
-                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'roman_binds' }}">ROMAN BINDS</router-link>
+                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'roman_blinds' }}">ROMAN BINDS</router-link>
                 </li>
                 <li>
-                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'venetian_binds' }}">VENETIAN BINDS</router-link>
+                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'venetian_blinds' }}">VENETIAN BINDS</router-link>
                 </li>
                 <li>
-                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'panel_glide_bind' }}">PANEL GLIDE BIND</router-link>
+                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'panel_glide_blind' }}">PANEL GLIDE BIND</router-link>
                 </li>
               </ul>
             </li>
@@ -217,7 +217,7 @@
               </ul>
             </li>
             <li>
-              <router-link :to="{ name: 'Product', params: { id: 'palntation_shutters' }}">PALNTATION SHUTTERS</router-link>
+              <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'plantation_shutters' }}">PLANTATION SHUTTERS</router-link>
             </li>
             <li>
               <span href="#" @click="handleShowMobileSubMenu2('external_awings')">

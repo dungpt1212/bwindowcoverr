@@ -6,7 +6,7 @@
     </div>
     <p class="title">{{ itemsBanners.title }}</p>
     <div class="product_carousel">
-        <MDBCarousel v-model="carousel" :key="key" :items="itemsBanners.data" :indicators="false" class="slide-banner-product" />
+        <MDBCarousel v-model="carousel" :items="itemsBanners.data" :indicators="false" class="slide-banner-product" />
     </div>
     <br><br>
     <div class="col-example" style="width: 70%; margin: 0px auto;">
@@ -59,7 +59,6 @@ export default {
     },
     methods: {
         getListCarousel() {
-            this.key ++
             switch (this.$route.params.id) {
                 case 'roller_blinds':
                     this.itemsBanners = {
