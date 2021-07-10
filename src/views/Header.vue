@@ -13,7 +13,9 @@
           @mouseover="showProductSubMenu1" 
           @mouseleave="hideProductSubMenu1"
         > 
-          <span :class="{ menu_active: $route.name == 'Product' }">product</span> 
+
+          <span :class="{ menu_active: $route.name == 'Product' }">PRODUCTS</span> 
+
           <ul v-if="showProductSubMenuFlag1" class="sub-menu clearfix">
             <li 
               @mouseover="showProductSubMenu2(1)" 
@@ -27,27 +29,27 @@
               <ul v-if="showProductSubMenuFlag2.internal_blinds" class="sub-menu2">
                 <li>
                   <a href="/indoor">
-                    <router-link :to="{ name: 'Product', params: { id: 'roller_binds' }}">ROLLER BINDS</router-link>
+                    <router-link :to="{ name: 'Product', params: { id: 'roller_blinds' }}">ROLLER BLINDS</router-link>
                   </a>
                 </li>
                 <li>
                   <a href="/indoor">
-                    <router-link :to="{ name: 'Product', params: { id: 'vertical_binds' }}">VERTICAL BINDS</router-link>
+                    <router-link :to="{ name: 'Product', params: { id: 'vertical_blinds' }}">VERTICAL BLINDS</router-link>
                   </a>
                 </li>
                 <li>
                   <a href="/indoor">
-                    <router-link :to="{ name: 'Product', params: { id: 'roman_binds' }}">ROMAN BINDS</router-link>
+                    <router-link :to="{ name: 'Product', params: { id: 'roman_blinds' }}">ROMAN BLINDS</router-link>
                   </a>
                 </li>
                 <li>
                   <a href="/indoor">
-                    <router-link :to="{ name: 'Product', params: { id: 'venetian_binds' }}">VENETIAN BINDS</router-link>
+                    <router-link :to="{ name: 'Product', params: { id: 'venetian_blinds' }}">VENETIAN BLINDS</router-link>
                   </a>
                 </li>
                 <li>
                   <a href="/indoor">
-                    <router-link :to="{ name: 'Product', params: { id: 'panel_glide_bind' }}">PANEL GLIDE BIND</router-link>
+                    <router-link :to="{ name: 'Product', params: { id: 'panel_glide_blind' }}">PANEL GLIDE BLINDS</router-link>
                   </a>
                 </li>
               </ul>
@@ -81,7 +83,7 @@
             </li>
             <li>
               <a href="/indoor">
-                <router-link :to="{ name: 'Product', params: { id: 'palntation_shutters' }}">PALNTATION SHUTTERS</router-link>
+                <router-link :to="{ name: 'Product', params: { id: 'plantation_shutters' }}">PLANTATION SHUTTERS</router-link>
               </a>
             </li>
             <li 
@@ -90,7 +92,7 @@
               style="position: relative;"
             >
               <a href="javascript:void(0)">
-                EXTERNAL AWINGS
+                EXTERNAL AWNINGS
                 <i class="fas fa-angle-right" style="transform: translateY(1px);"></i>
               </a>
               <ul v-if="showProductSubMenuFlag2.external_awings" class="sub-menu2">
@@ -251,7 +253,7 @@
           <router-link to="/gallery"> Gallery </router-link>
         </MDBListGroupItem>
         <MDBListGroupItem :class="{ menu_active: $route.name == 'Contact' }" tag="a" action>
-          <router-link to="/contact"> Contract </router-link>
+          <router-link to="/contact"> Contact </router-link>
         </MDBListGroupItem>
       </MDBListGroup>
     </MDBNavbar>
