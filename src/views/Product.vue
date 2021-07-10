@@ -5,7 +5,7 @@
         <p>PRODUCTS</p>
     </div>
     <p class="title">{{ itemsBanners.title }}</p>
-    <div style="width: 1000px; margin: 0px auto;">
+    <div class="product_carousel">
         <MDBCarousel v-model="carousel" :key="key" :items="itemsBanners.data" :indicators="false" class="slide-banner-product" />
     </div>
     <br><br>
@@ -350,6 +350,15 @@ export default {
     }
 </style>
 <style lang="scss" scoped>
+    .product_carousel {
+        width: 100%;
+    }
+    @media screen and (min-width: 1000px) {
+        .product_carousel {
+            width: 1000px;
+            margin: 0px auto;
+        }
+    }
     .title {
         text-align: center;
         font-size: 50px;

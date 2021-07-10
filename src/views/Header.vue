@@ -184,19 +184,19 @@
               </span>
               <ul style="list-style:none" class="mobile-submenu2 internal_blinds">
                 <li>
-                  <router-link :to="{ name: 'Product', params: { id: 'roller_binds' }}">ROLLER BINDS</router-link>
+                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'roller_binds' }}">ROLLER BINDS</router-link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'Product', params: { id: 'vertical_binds' }}">VERTICAL BINDS</router-link>
+                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'vertical_binds' }}">VERTICAL BINDS</router-link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'Product', params: { id: 'roman_binds' }}">ROMAN BINDS</router-link>
+                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'roman_binds' }}">ROMAN BINDS</router-link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'Product', params: { id: 'venetian_binds' }}">VENETIAN BINDS</router-link>
+                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'venetian_binds' }}">VENETIAN BINDS</router-link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'Product', params: { id: 'panel_glide_bind' }}">PANEL GLIDE BIND</router-link>
+                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'panel_glide_bind' }}">PANEL GLIDE BIND</router-link>
                 </li>
               </ul>
             </li>
@@ -206,13 +206,13 @@
               </span>
               <ul style="list-style:none" class="mobile-submenu2 curtains">
                 <li>
-                  <router-link :to="{ name: 'Product', params: { id: 'wave_fold' }}">S-FOLD/WAVE-FOLD</router-link>
+                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'wave_fold' }}">S-FOLD/WAVE-FOLD</router-link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'Product', params: { id: 'pleated' }}">PLEATED</router-link>
+                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'pleated' }}">PLEATED</router-link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'Product', params: { id: 'eyelet' }}">EYELET</router-link>
+                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'eyelet' }}">EYELET</router-link>
                 </li>
               </ul>
             </li>
@@ -225,27 +225,27 @@
               </span>
               <ul style="list-style:none" class="mobile-submenu2 external_awings">
                 <li>
-                  <router-link :to="{ name: 'Product', params: { id: 'zipscreen' }}">ZIPSCREENS</router-link>
+                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'zipscreen' }}">ZIPSCREENS</router-link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'Product', params: { id: 'folding' }}">FOLDING</router-link>
+                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'folding' }}">FOLDING</router-link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'Product', params: { id: 'awnings' }}">AWNINGS</router-link>
+                  <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'awnings' }}">AWNINGS</router-link>
                 </li>
               </ul>
             </li>
             <li>
-              <router-link :to="{ name: 'Product', params: { id: 'roller_shutters' }}">ROLLER SHUTTERS</router-link>
+              <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'roller_shutters' }}">ROLLER SHUTTERS</router-link>
             </li>
             <li>
-              <router-link :to="{ name: 'Product', params: { id: 'security_door' }}">SECURITY DOORS/FLY DOORS</router-link>
+              <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'security_door' }}">SECURITY DOORS/FLY DOORS</router-link>
             </li>
             <li>
-              <router-link :to="{ name: 'Product', params: { id: 'security_windows' }}">SECURITY WINDOWS</router-link>
+              <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'security_windows' }}">SECURITY WINDOWS</router-link>
             </li>
             <li>
-              <router-link :to="{ name: 'Product', params: { id: 'fly_screen' }}">FLY SCREENS</router-link>
+              <router-link @click="handleShowMobileMenu" :to="{ name: 'Product', params: { id: 'fly_screen' }}">FLY SCREENS</router-link>
             </li>
           </ul>
         </MDBListGroupItem>
