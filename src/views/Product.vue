@@ -6,7 +6,7 @@
     </div>
     <p class="title">{{ itemsBanners.title }}</p>
     <div class="product_carousel">
-        <MDBCarousel v-model="carousel" :items="itemsBanners.data" :indicators="false" class="slide-banner-product" />
+        <MDBCarousel v-model="carousel" :items="itemsBanners.data" :indicators="false" class="slide-banner-product" v-if="itemsBanners.data" />
     </div>
     <br><br>
     <div class="col-example" style="width: 70%; margin: 0px auto;">
@@ -350,6 +350,7 @@ export default {
 </style>
 <style lang="scss" scoped>
     .product_carousel {
+        min-height: 400px;
         width: 100%;
     }
     @media screen and (min-width: 1000px) {
