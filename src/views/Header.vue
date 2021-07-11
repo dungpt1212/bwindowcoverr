@@ -428,6 +428,21 @@ export default {
 </script>
 
 <style lang="scss">
+  @media screen and (max-width: 768px) {
+    .indoor-background {
+      height: 300px;
+      margin-bottom: 20px;
+      position: relative;
+      p {
+        position: absolute;
+        top: 40%;
+        right: 30% !important;
+        color: #ffffff;
+        font-size: 40px !important;
+        font-weight: 100;
+      }
+    }
+  }
   .slide-banner {
     .carousel-inner {
       // height: 100vh;
