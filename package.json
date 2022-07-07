@@ -1,15 +1,19 @@
 {
   "name": "bwindowcovers",
   "version": "0.1.0",
+  "homepage": "https://dungpt1212.github.io/bwindowcoverr/",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "vue-cli-service serve --open"
+    "start": "vue-cli-service serve --open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "gh-pages": "^4.0.0",
     "jquery": "^3.6.0",
     "mdb-vue-ui-kit": "^1.0.0-beta6",
     "vue": "^3.0.0",
