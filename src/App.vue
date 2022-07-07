@@ -3,10 +3,11 @@
 </template>
 
 <style lang="scss">
-@import '~@/../mdb/scss/index.free.scss';
 
+@import '~@/../mdb/scss/index.free.scss';
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
 #app {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Baloo 2', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
